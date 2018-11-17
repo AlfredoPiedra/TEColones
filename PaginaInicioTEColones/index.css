@@ -33,3 +33,30 @@ nav
     background: #134f5c;
     color: white;
 }
+.infoPagina
+{
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    color:#666666;
+    font-size: 24px;
+    text-align: center
+}
+.infoPagina ul li
+{
+    padding: 50px;
+}
+#icono
+{
+    color: #009e0f;
+}
+section
+{
+    position: relative;
+    width: 50%;
+    float: right;
+}
+.TEColones
+{
+    TEColones:#000000;
+}
