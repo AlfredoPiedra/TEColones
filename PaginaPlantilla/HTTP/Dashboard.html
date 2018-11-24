@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/Dashboard.css" />
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="InlineWrapper">
+            <div class="Logo">
+                <h1 class="logoT">X-TEC</h1>
+            </div>
+            <div class="FormWrapper">
+                <form class="form-inline" action="">
+                    <i class="far fa-user-circle fa-3x" id="icono"></i>
+                    <i class="far fa-question-circle fa-3x" id="icono"></i>
+                </form>
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <nav class="nav">
+            <ul>
+                <li><input type="submit" value="Perfil" id="BTNlateral"></li>
+                <li><input type="submit" value="Dashboard" id="BTNPresionado"></li>
+                <li><input type="submit" value="Crear promociones" id="BTNlateral"></li>
+                <li><input type="submit" value="Administrar" id="BTNlateral"></li>
+            </ul>
+        </nav>
+    </aside>
+    <section>
+        <div class="container">
+            <div class="left">
+                <div id="top10C">
+                    <h4>Top 10 de estudiantes</h4>
+                    <div id="top10">
+
+                    </div>
+                </div>
+                <br><br>
+                <div id="BeneficioC">
+                    <h4>Beneficio</h4>
+                    <div id="Beneficio">
+                    </div>
+                </div>
+                <br><br>
+                <div id="UsuariosAlMesC">
+                    <h4>Usuarios al mes</h4>
+                    <div id="UsuariosAlMes">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div id="ToneladasAnualesC">
+                    <h4>Toneladas anuales</h4>
+                    <div id="ToneladasAnuales">
+                        <select name="posiblesAdministradores" id="posiblesAdministradores" value="( selecione el funcionario )">
+                            <option>Agregar datos de la base de datos</option>
+                            <option>no olvidar por favor :v </option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+                <div id="ToneladasMensualesC">
+                    <h4>Toneladas mensuales</h4>
+                    <div id="ToneladasMensuales">
+                        <select name="posiblesAdministradores" id="posiblesAdministradores" value="( selecione el funcionario )">
+                            <option>Agregar datos de la base de datos</option>
+                            <option>no olvidar por favor :v </option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+                <div id="ToneladasSedesC">
+                    <h4>Toneladas por sede</h4>
+                    <div id="ToneladasSedes">
+                        <select name="posiblesAdministradores" id="posiblesAdministradores" value="( selecione el funcionario )">
+                            <option>Agregar datos de la base de datos</option>
+                            <option>no olvidar por favor :v </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+
+</html>

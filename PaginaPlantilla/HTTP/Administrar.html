@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Administrar</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/Administrar.css" />
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="InlineWrapper">
+            <div class="Logo">
+                <h1 class="logoT">X-TEC</h1>
+            </div>
+            <div class="FormWrapper">
+                <form class="form-inline" action="">
+                    <i class="far fa-user-circle fa-3x" id="icono"></i>
+                    <i class="far fa-question-circle fa-3x" id="icono"></i>
+                </form>
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <nav class="nav">
+            <ul>
+                <li><input type="submit" value="Perfil" id="BTNlateral"></li>
+                <li><input type="submit" value="Dashboard" id="BTNlateral"></li>
+                <li><input type="submit" value="Crear promociones" id="BTNlateral"></li>
+                <li><input type="submit" value="Administrar" id="BTNPresionado"></li>
+            </ul>
+        </nav>
+    </aside>
+    <section>
+        <div class="container">
+            <div class="left">
+                <div class="administradores">
+                    <h4>Dar privilegios de administrador</h4>
+                    <br>
+                    <i class="fas fa-user-shield" id="iconoPerfil"></i>
+                    <select name="posiblesAdministradores" id="posiblesAdministradores" value="( selecione el funcionario )">
+                        <option>Agregar datos de la base de datos</option>
+                        <option>no olvidar por favor :v </option>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Dar privilegios" id="BTNPefil">
+                </div>
+                <br><br>
+                <div class="administradores">
+                    <h4>Deshabilitar promoción</h4>
+                    <br>
+                    <i class="far fa-calendar-times" id="iconoPerfil"></i>
+                    <select name="posiblesAdministradores" id="posiblesAdministradores" value="( selecione el funcionario )">
+                        <option>Agregar datos de la base de datos</option>
+                        <option>no olvidar por favor :v </option>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Deshabilitar" id="BTNPefil">
+                </div>
+                <br><br>
+                <div class="administradores">
+                    <h4>Generar reporte</h4>
+                    <br>
+                    <input type="submit" value="Visualizar reporte" id="BTNPefil" disabled>
+                    <br><br>
+                    <input type="submit" value="Descargar reporte" id="BTNPefil" disabled>
+                </div>
+            </div>
+            <div class="right">
+                <div class="administradores">
+                    <h4>Modificar tasa de cambio</h4>
+                    <br>
+                    <h4>Selecione material de reciclaje</h4>
+                    <br>
+                    <i class="fas fa-recycle" id="iconoPerfil"></i>
+                    <select name="materialesDeReciclaje" id="materialesDeReciclaje"">
+                                    <option>Agregar datos de la base de datos</option>
+                                    <option>no olvidar por favor :v </option>
+                            </select>
+                            <br><br>
+                            <h4>Indique el valor en TEColones que tendrá el kilo del material</h4>
+                            <br>
+                            <i class="
+                        far fa-money-bill-alt" id="iconoPerfil"></i>
+                        <input type="text" id="valorTEColonesXmaterial">
+                        <br><br>
+                        <input type="submit" value="Actualizar tasa de cambio" id="BTNPefil">
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+
+</html>
