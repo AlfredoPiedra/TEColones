@@ -46,15 +46,19 @@ public class UserValidationServlet extends HttpServlet {
 			request.setAttribute("habilidades", usuario.getHabilidades());
 			request.setAttribute("descripcion", usuario.getDescripcion());
 			
-			if(usuario.isTipoUsuario()){
+			if(usuario.getTipoUsuario() == 1){
 			
 				
 				request.getRequestDispatcher("/PaginaPerfil.jsp").forward(request, response);
 				
 				
-			}else{
+			}else if(usuario.getTipoUsuario() == 2){
 				
 				request.getRequestDispatcher("/PaginaPerfilFuncionario.jsp").forward(request, response);
+				
+			}else{
+				
+				request.getRequestDispatcher("/PaginaPerfilEncargado.html").forward(request, response);
 				
 			}
 			

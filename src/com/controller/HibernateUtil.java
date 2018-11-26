@@ -10,11 +10,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
 
+import com.model.Contenedor;
 import com.model.Correo;
 import com.model.Cuenta;
 import com.model.Estudiante;
 import com.model.Funcionario;
+import com.model.MaterialReciclable;
 import com.model.Persona;
+import com.model.Promocion;
 import com.model.Telefono;
 import com.model.TipoUsuario;
 import com.model.Usuario;
@@ -29,6 +32,176 @@ public class HibernateUtil {
 				HibernateSingleton.getSessionFactory();		
 		
 	}
+	
+	
+	public boolean darPermisos(String id){
+		
+		Session ss = 
+				sessionFactory.openSession();
+		 
+		Transaction tx = 
+				ss.beginTransaction();
+		
+		
+		List<Funcionario> funcionario =
+				(List<Funcionario>) ss.createQuery("from com.model.Funcionario e where e.Identificacion="+id).list();
+		
+		
+		if(funcionario.size() == 1){
+
+			String update = 
+					"update Funcionario f set f.esAdmin = 1 where f.idFuncionario = "+Integer.toString(funcionario.get(0).getIdFuncionario());
+			
+			ss.createQuery(update).executeUpdate();
+			
+			tx.commit();
+			ss.close();
+			return true;
+			
+			
+		}else{
+		
+			tx.commit();
+			ss.close();
+			return false;
+			
+		}
+		
+	}
+	
+	
+	public ArrayList<Contenedor> encontrarMateriales(){
+		
+		Session ss = 
+				sessionFactory.openSession();
+		 
+		Transaction tx = 
+				ss.beginTransaction();
+		
+		List<MaterialReciclable> material = 
+				(List<MaterialReciclable>) ss.createQuery(" from com.model.MaterialReciclable").list();
+		
+		
+		tx.commit();
+		ss.close();
+		
+		if(material.isEmpty()){
+			
+			return null;
+					
+		}else{
+			
+			ArrayList<Contenedor> lista = new ArrayList<Contenedor>();
+			
+			for(int i = 0; i < material.size(); ++i){
+				
+				Contenedor cont = new Contenedor();
+				cont.setData(material.get(i).getMaterial());
+				lista.add(cont);
+				
+			}
+			
+			return lista;
+			
+		}
+		
+	}
+	
+	
+	public ArrayList<Contenedor> encontrarPromociones(){
+		
+		Session ss = 
+				sessionFactory.openSession();
+		 
+		Transaction tx = 
+				ss.beginTransaction();
+		
+		List<Promocion> promos = 
+				(List<Promocion>) ss.createQuery(" from com.model.Promocion").list();
+		
+		
+		tx.commit();
+		ss.close();
+		
+		if(promos.isEmpty()){
+			
+			return null;
+					
+		}else{
+			
+			ArrayList<Contenedor> lista = new ArrayList<Contenedor>();
+			
+			for(int i = 0; i < promos.size(); ++i){
+				
+				Contenedor cont = new Contenedor();
+				cont.setData(promos.get(i).getNombre());
+				lista.add(cont);
+				
+			}
+			
+			return lista;
+			
+		}
+		
+	}
+	
+	
+	public ArrayList<Contenedor> encontrarFuncionarios(){
+		
+		Session ss = 
+				sessionFactory.openSession();
+		 
+		Transaction tx = 
+				ss.beginTransaction();
+		
+		List<TipoUsuario> tipo = 
+				(List<TipoUsuario>) ss.createQuery(" from com.model.TipoUsuario tu where tu.tipoUsuario='Funcionario'").list();
+		
+		List<Funcionario> funcionarios = 
+				(List<Funcionario>) ss.createQuery("from com.model.Funcionario").list();
+		
+		tx.commit();
+		ss.close();
+		
+		if(tipo.size() == 1){
+			
+			int idUsuario = tipo.get(0).getIdTipoUsuario();
+			String idTipoUsuario = Integer.toString(idUsuario);
+			
+			if(funcionarios.size() >= 1){
+				
+				ArrayList<Contenedor> listaFuncionarios = new ArrayList<Contenedor>();
+				for(int i = 0; i < funcionarios.size(); ++i){
+					
+					int id = funcionarios.get(i).getIdCuenta().getIdTipoUsuario().getIdTipoUsuario();
+					if(id == idUsuario){
+						
+						String nombre = funcionarios.get(i).getIdPersona().getNombre() +" "+ funcionarios.get(i).getIdPersona().getApellidos();
+
+						Contenedor conten = new Contenedor();
+						conten.setData(nombre+"-"+funcionarios.get(i).getIdentificacion());
+						listaFuncionarios.add(conten);
+						
+					}
+					
+				}
+				
+				return listaFuncionarios;
+				
+			}else{
+				
+				return null;
+				
+			}
+			
+		}else{
+			
+			return null;
+			
+		}
+		
+	}
+	
 	
 	private void agregarMedios(Persona persona,
 												 String Correo,
@@ -222,11 +395,26 @@ public class HibernateUtil {
 				
 				Date fechaRegistro = (Date)estudiante.get(0).getIdCuenta().getFechaRegistro();
 				String Id = estudiante.get(0).getCarnet();
-				boolean tipoUsuario = true;
 				String Habilidades = estudiante.get(0).getIdPersona().getHabilidades();
 				String Descripcion = estudiante.get(0).getIdPersona().getDescripcion();
 				String Carrera = estudiante.get(0).getCarrera();
+				String elTipoUsuario = estudiante.get(0).getIdCuenta().getIdTipoUsuario().getTipoUsuario();
 				
+				int tipoUsuario;
+				
+				if(elTipoUsuario.equals("Estudiante")){
+					
+					tipoUsuario = 1;
+					
+				}else if (elTipoUsuario.equals("Funcionario")){
+					
+					tipoUsuario = 2;
+					
+				}else{
+					
+					tipoUsuario = 3;
+					
+				}
 				
 				tx.commit();
 				ss.close();
@@ -263,9 +451,25 @@ public class HibernateUtil {
 					
 					Date fechaRegistro = (Date)funcionario.get(0).getIdCuenta().getFechaRegistro();
 					String Id = funcionario.get(0).getIdentificacion();
-					boolean tipoUsuario = false;
 					String Habilidades = funcionario.get(0).getIdPersona().getHabilidades();
 					String Descripcion = funcionario.get(0).getIdPersona().getDescripcion();
+					String elTipoUsuario = funcionario.get(0).getIdCuenta().getIdTipoUsuario().getTipoUsuario();
+					
+					int tipoUsuario;
+					
+					if(elTipoUsuario.equals("Estudiante")){
+						
+						tipoUsuario = 1;
+						
+					}else if (elTipoUsuario.equals("Funcionario")){
+						
+						tipoUsuario = 2;
+						
+					}else{
+						
+						tipoUsuario = 3;
+						
+					}
 					
 					tx.commit();
 					ss.close();
@@ -321,9 +525,18 @@ public class HibernateUtil {
 		
 		HibernateUtil hb = new HibernateUtil();
 		
-		Usuario us = hb.encontrarUsuario("'2013241554'","'gato123'");
 		
-		System.out.println(us.toString());
+		ArrayList<Contenedor> ls = hb.encontrarPromociones();
+		
+		for(int i =0; i < ls.size(); ++i){
+			
+			System.out.println(ls.get(i).toString());
+			
+		}
+		
+		//Usuario us = hb.encontrarUsuario("'2013241554'","'gato123'");
+		
+		//System.out.println(us.toString());
 		
 		//hb.activarCuenta(1);
 		

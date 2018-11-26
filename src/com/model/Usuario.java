@@ -13,7 +13,7 @@ public class Usuario {
 	private ArrayList<Telefono> Telefonos;
 	private Date fechaRegistro;
 	private String Id;
-	private boolean TipoUsuario;
+	private int TipoUsuario;
 	private String Habilidades;
 	private String Descripcion;
 	private String Universidad;
@@ -36,7 +36,7 @@ public class Usuario {
 	 * @param universidad
 	 */
 	public Usuario(String nombre, String apellidos, String carrera, ArrayList<Correo> correos,
-			ArrayList<Telefono> telefonos, Date fechaRegistro, String id, boolean tipoUsuario, String habilidades,
+			ArrayList<Telefono> telefonos, Date fechaRegistro, String id, int tipoUsuario, String habilidades,
 			String descripcion, String universidad) {
 		Nombre = nombre;
 		Apellidos = apellidos;
@@ -103,7 +103,7 @@ public class Usuario {
 	/**
 	 * @return the tipoUsuario
 	 */
-	public boolean isTipoUsuario() {
+	public int getTipoUsuario() {
 		return TipoUsuario;
 	}
 
@@ -180,7 +180,7 @@ public class Usuario {
 	/**
 	 * @param tipoUsuario the tipoUsuario to set
 	 */
-	public void setTipoUsuario(boolean tipoUsuario) {
+	public void setTipoUsuario(int tipoUsuario) {
 		TipoUsuario = tipoUsuario;
 	}
 
@@ -205,6 +205,7 @@ public class Usuario {
 		Universidad = universidad;
 	}
 
+	
 	
 	
 }

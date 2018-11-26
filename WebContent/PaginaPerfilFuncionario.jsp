@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Pagina de Perfil</title>
-		<link rel="stylesheet" type="text/css" href="PaginaPerfil.css" />
+		<link rel="stylesheet" type="text/css" href="PaginaPerfilFuncionario.css" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	
@@ -24,7 +24,7 @@
 				<button class="dropbtn"></button>
 				<div class="dropdown-content">
 					<a href="#">Darse de baja</a>
-					<a href="#">Cerrar sesión</a>
+					<a href="PaginaInicio.html">Cerrar sesión</a>
 				</div>
 				
 				</div> 
@@ -40,12 +40,13 @@
 		  	</div>
 		  
 		  </div>
+		  
 		    		
 		  	<div class="sidenav">
-			  <a href="#">Perfil</a>
-			  <a href="#">Dashboard</a>
+			  <a  onclick="window.location='UserValidationServlet'+window.location.search;">Perfil</a>
+			  <a  onclick="window.location='Dashboard.html'+window.location.search;">Dashboard</a>
 			  <a href="#">Promociones</a>
-			  <a href="#">Configuraciones</a>
+			  <a onclick="window.location='ConfigurationServlet'+window.location.search;">Configuraciones</a>
 			</div>
 			
 			<div class="main">

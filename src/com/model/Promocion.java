@@ -22,9 +22,14 @@ public class Promocion {
 	@Column(name = "idPromocion")
 	private int idPromocion;
 	
+	@Column(name="Nombre")
+	private String Nombre;
+	
 	@Column(name = "MontoPromocion")
 	private double MontoPromocion;
 	
+	@Column(name = "Validez")
+	private boolean Validez;
 	
 	@OneToOne
 	@JoinColumn(name = "TipoPromocion_idTipoPromocion")
@@ -37,50 +42,46 @@ public class Promocion {
 	@Temporal(TemporalType.DATE)
 	@Column(name = "FechaFinalizacion")
 	private Date FechaFinalizacion;
+
 	
-	/**
-	 * @return the fechaInicio
-	 */
-	public Date getFechaInicio() {
-		return FechaInicio;
-	}
-
-	/**
-	 * @param fechaInicio the fechaInicio to set
-	 */
-	public void setFechaInicio(Date fechaInicio) {
-		FechaInicio = fechaInicio;
-	}
-
-	/**
-	 * @return the fechaFinalizacion
-	 */
-	public Date getFechaFinalizacion() {
-		return FechaFinalizacion;
-	}
-
-	/**
-	 * @param fechaFinalizacion the fechaFinalizacion to set
-	 */
-	public void setFechaFinalizacion(Date fechaFinalizacion) {
-		FechaFinalizacion = fechaFinalizacion;
-	}
-
-	public Promocion() {
+	public Promocion(){
+		
 		
 	}
-
+	
 	/**
 	 * @param idPromocion
+	 * @param nombre
 	 * @param montoPromocion
+	 * @param validez
 	 * @param idTipoPromocion
 	 * @param fechaInicio
 	 * @param fechaFinalizacion
 	 */
-	public Promocion(int idPromocion, double montoPromocion, TipoPromocion idTipoPromocion, Date fechaInicio,
-			Date fechaFinalizacion) {
+	public Promocion(int idPromocion, String nombre, double montoPromocion, boolean validez,
+			TipoPromocion idTipoPromocion, Date fechaInicio, Date fechaFinalizacion) {
 		this.idPromocion = idPromocion;
+		Nombre = nombre;
 		MontoPromocion = montoPromocion;
+		Validez = validez;
+		this.idTipoPromocion = idTipoPromocion;
+		FechaInicio = fechaInicio;
+		FechaFinalizacion = fechaFinalizacion;
+	}
+
+	/**
+	 * @param nombre
+	 * @param montoPromocion
+	 * @param validez
+	 * @param idTipoPromocion
+	 * @param fechaInicio
+	 * @param fechaFinalizacion
+	 */
+	public Promocion(String nombre, double montoPromocion, boolean validez, TipoPromocion idTipoPromocion,
+			Date fechaInicio, Date fechaFinalizacion) {
+		Nombre = nombre;
+		MontoPromocion = montoPromocion;
+		Validez = validez;
 		this.idTipoPromocion = idTipoPromocion;
 		FechaInicio = fechaInicio;
 		FechaFinalizacion = fechaFinalizacion;
@@ -94,10 +95,10 @@ public class Promocion {
 	}
 
 	/**
-	 * @param idPromocion the idPromocion to set
+	 * @return the nombre
 	 */
-	public void setIdPromocion(int idPromocion) {
-		this.idPromocion = idPromocion;
+	public String getNombre() {
+		return Nombre;
 	}
 
 	/**
@@ -108,10 +109,10 @@ public class Promocion {
 	}
 
 	/**
-	 * @param montoPromocion the montoPromocion to set
+	 * @return the validez
 	 */
-	public void setMontoPromocion(double montoPromocion) {
-		MontoPromocion = montoPromocion;
+	public boolean isValidez() {
+		return Validez;
 	}
 
 	/**
@@ -122,10 +123,66 @@ public class Promocion {
 	}
 
 	/**
+	 * @return the fechaInicio
+	 */
+	public Date getFechaInicio() {
+		return FechaInicio;
+	}
+
+	/**
+	 * @return the fechaFinalizacion
+	 */
+	public Date getFechaFinalizacion() {
+		return FechaFinalizacion;
+	}
+
+	/**
+	 * @param idPromocion the idPromocion to set
+	 */
+	public void setIdPromocion(int idPromocion) {
+		this.idPromocion = idPromocion;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
+	/**
+	 * @param montoPromocion the montoPromocion to set
+	 */
+	public void setMontoPromocion(double montoPromocion) {
+		MontoPromocion = montoPromocion;
+	}
+
+	/**
+	 * @param validez the validez to set
+	 */
+	public void setValidez(boolean validez) {
+		Validez = validez;
+	}
+
+	/**
 	 * @param idTipoPromocion the idTipoPromocion to set
 	 */
 	public void setIdTipoPromocion(TipoPromocion idTipoPromocion) {
 		this.idTipoPromocion = idTipoPromocion;
+	}
+
+	/**
+	 * @param fechaInicio the fechaInicio to set
+	 */
+	public void setFechaInicio(Date fechaInicio) {
+		FechaInicio = fechaInicio;
+	}
+
+	/**
+	 * @param fechaFinalizacion the fechaFinalizacion to set
+	 */
+	public void setFechaFinalizacion(Date fechaFinalizacion) {
+		FechaFinalizacion = fechaFinalizacion;
 	}
 
 	/* (non-Javadoc)
@@ -133,8 +190,10 @@ public class Promocion {
 	 */
 	@Override
 	public String toString() {
-		return "Promocion [idPromocion=" + idPromocion + ", MontoPromocion=" + MontoPromocion + ", idTipoPromocion="
-				+ idTipoPromocion + "]";
+		return "Promocion [idPromocion=" + idPromocion + ", Nombre=" + Nombre + ", MontoPromocion=" + MontoPromocion
+				+ ", Validez=" + Validez + ", idTipoPromocion=" + idTipoPromocion + ", FechaInicio=" + FechaInicio
+				+ ", FechaFinalizacion=" + FechaFinalizacion + "]";
 	}
+
 
 }
