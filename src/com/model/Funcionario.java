@@ -1,7 +1,5 @@
 package com.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Funcionario")
@@ -25,24 +21,18 @@ public class Funcionario {
 	@Column(name = "Identificacion")
 	private String Identificacion;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FechaRegistro")
-	private Date FechaRegistro;
-	
 	@Column(name = "esAdmin")
 	private boolean esAdmin;
 	
-	@OneToOne
-	@JoinColumn(name = "idCuenta")
-	private int idCuenta;
 	
 	@OneToOne
-	@JoinColumn(name = "idTipoUsuario")
-	private int idTipoUsuario;
+	@JoinColumn(name = "Cuenta_idCuenta")
+	private Cuenta idCuenta;
+	
 	
 	@OneToOne
-	@JoinColumn(name = "idPersona")
-	private int idPersona;
+	@JoinColumn(name = "Persona_idPersona")
+	private Persona idPersona;
 	
 	public Funcionario() {
 	
@@ -51,20 +41,29 @@ public class Funcionario {
 	/**
 	 * @param idFuncionario
 	 * @param identificacion
-	 * @param fechaRegistro
 	 * @param esAdmin
 	 * @param idCuenta
-	 * @param idTipoUsuario
 	 * @param idPersona
 	 */
-	public Funcionario(int idFuncionario, String identificacion, Date fechaRegistro, boolean esAdmin, int idCuenta,
-			int idTipoUsuario, int idPersona) {
+	public Funcionario(int idFuncionario, String identificacion, boolean esAdmin, Cuenta idCuenta, Persona idPersona) {
 		this.idFuncionario = idFuncionario;
 		Identificacion = identificacion;
-		FechaRegistro = fechaRegistro;
 		this.esAdmin = esAdmin;
 		this.idCuenta = idCuenta;
-		this.idTipoUsuario = idTipoUsuario;
+		this.idPersona = idPersona;
+	}
+
+	/**
+	 * @param idFuncionario
+	 * @param identificacion
+	 * @param esAdmin
+	 * @param idCuenta
+	 * @param idPersona
+	 */
+	public Funcionario( String identificacion, boolean esAdmin, Cuenta idCuenta, Persona idPersona) {
+		Identificacion = identificacion;
+		this.esAdmin = esAdmin;
+		this.idCuenta = idCuenta;
 		this.idPersona = idPersona;
 	}
 
@@ -97,20 +96,6 @@ public class Funcionario {
 	}
 
 	/**
-	 * @return the fechaRegistro
-	 */
-	public Date getFechaRegistro() {
-		return FechaRegistro;
-	}
-
-	/**
-	 * @param fechaRegistro the fechaRegistro to set
-	 */
-	public void setFechaRegistro(Date fechaRegistro) {
-		FechaRegistro = fechaRegistro;
-	}
-
-	/**
 	 * @return the esAdmin
 	 */
 	public boolean isEsAdmin() {
@@ -127,42 +112,28 @@ public class Funcionario {
 	/**
 	 * @return the idCuenta
 	 */
-	public int getIdCuenta() {
+	public Cuenta getIdCuenta() {
 		return idCuenta;
 	}
 
 	/**
 	 * @param idCuenta the idCuenta to set
 	 */
-	public void setIdCuenta(int idCuenta) {
+	public void setIdCuenta(Cuenta idCuenta) {
 		this.idCuenta = idCuenta;
-	}
-
-	/**
-	 * @return the idTipoUsuario
-	 */
-	public int getIdTipoUsuario() {
-		return idTipoUsuario;
-	}
-
-	/**
-	 * @param idTipoUsuario the idTipoUsuario to set
-	 */
-	public void setIdTipoUsuario(int idTipoUsuario) {
-		this.idTipoUsuario = idTipoUsuario;
 	}
 
 	/**
 	 * @return the idPersona
 	 */
-	public int getIdPersona() {
+	public Persona getIdPersona() {
 		return idPersona;
 	}
 
 	/**
 	 * @param idPersona the idPersona to set
 	 */
-	public void setIdPersona(int idPersona) {
+	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;
 	}
 
@@ -172,8 +143,7 @@ public class Funcionario {
 	@Override
 	public String toString() {
 		return "Funcionario [idFuncionario=" + idFuncionario + ", Identificacion=" + Identificacion + ", FechaRegistro="
-				+ FechaRegistro + ", esAdmin=" + esAdmin + ", idCuenta=" + idCuenta + ", idTipoUsuario=" + idTipoUsuario
-				+ ", idPersona=" + idPersona + "]";
+				+ ", esAdmin=" + esAdmin + ", idCuenta=" + idCuenta + ", idTipoUsuario=" + ", idPersona=" + idPersona + "]";
 	}
 
 }

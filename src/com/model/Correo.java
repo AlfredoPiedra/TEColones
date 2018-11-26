@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,10 @@ public class Correo {
 	@Column(name = "Correo")
 	private String Correo;
 	
+	@OneToOne
+	@JoinColumn(name="Persona_idPersona")
+	private Persona idPersona;
+	
 	public Correo() {
 	
 	}
@@ -26,10 +32,39 @@ public class Correo {
 	/**
 	 * @param idCorreo
 	 * @param correo
+	 * @param idPersona
 	 */
-	public Correo(int idCorreo, String correo) {
+	public Correo(int idCorreo, String correo, Persona idPersona) {
 		this.idCorreo = idCorreo;
 		Correo = correo;
+		this.idPersona = idPersona;
+	}
+
+
+
+	/**
+	 * @return the idPersona
+	 */
+	public Persona getIdPersona() {
+		return idPersona;
+	}
+
+	/**
+	 * @param idPersona the idPersona to set
+	 */
+	public void setIdPersona(Persona idPersona) {
+		this.idPersona = idPersona;
+	}
+
+	/**
+	 * @param idCorreo
+	 * @param correo
+	 * @param idPersona
+	 */
+	public Correo(String correo, Persona idPersona) {
+		this.idCorreo = idCorreo;
+		Correo = correo;
+		this.idPersona = idPersona;
 	}
 
 	/**

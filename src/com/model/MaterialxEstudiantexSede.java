@@ -29,17 +29,20 @@ public class MaterialxEstudiantexSede {
 	@Column(name = "FechaRegistro")
 	private Date FechaRegistro;
 	
-	@OneToOne
-	@JoinColumn(name = "idEstudiante")
-	private int idEstudiante;
 	
 	@OneToOne
-	@JoinColumn(name = "idMaterialReciclable")
-	private int idMaterialReciclable;
+	@JoinColumn(name = "Estudiante_idEstudiante")
+	private Estudiante idEstudiante;
+	
 	
 	@OneToOne
-	@JoinColumn(name = "idSede")
-	private int idSede;
+	@JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	private MaterialReciclable idMaterialReciclable;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "Sede_idSede")
+	private Sede idSede;
 	
 	public MaterialxEstudiantexSede() {
 		
@@ -54,7 +57,7 @@ public class MaterialxEstudiantexSede {
 	 * @param idSede
 	 */
 	public MaterialxEstudiantexSede(int idMaterialxEstudiantexSede, double cantidad, Date fechaRegistro,
-			int idEstudiante, int idMaterialReciclable, int idSede) {
+			Estudiante idEstudiante, MaterialReciclable idMaterialReciclable, Sede idSede) {
 		this.idMaterialxEstudiantexSede = idMaterialxEstudiantexSede;
 		Cantidad = cantidad;
 		FechaRegistro = fechaRegistro;
@@ -108,42 +111,42 @@ public class MaterialxEstudiantexSede {
 	/**
 	 * @return the idEstudiante
 	 */
-	public int getIdEstudiante() {
+	public Estudiante getIdEstudiante() {
 		return idEstudiante;
 	}
 
 	/**
 	 * @param idEstudiante the idEstudiante to set
 	 */
-	public void setIdEstudiante(int idEstudiante) {
+	public void setIdEstudiante(Estudiante idEstudiante) {
 		this.idEstudiante = idEstudiante;
 	}
 
 	/**
 	 * @return the idMaterialReciclable
 	 */
-	public int getIdMaterialReciclable() {
+	public MaterialReciclable getIdMaterialReciclable() {
 		return idMaterialReciclable;
 	}
 
 	/**
 	 * @param idMaterialReciclable the idMaterialReciclable to set
 	 */
-	public void setIdMaterialReciclable(int idMaterialReciclable) {
+	public void setIdMaterialReciclable(MaterialReciclable idMaterialReciclable) {
 		this.idMaterialReciclable = idMaterialReciclable;
 	}
 
 	/**
 	 * @return the idSede
 	 */
-	public int getIdSede() {
+	public Sede getIdSede() {
 		return idSede;
 	}
 
 	/**
 	 * @param idSede the idSede to set
 	 */
-	public void setIdSede(int idSede) {
+	public void setIdSede(Sede idSede) {
 		this.idSede = idSede;
 	}
 
