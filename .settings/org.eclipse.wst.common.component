@@ -2,6 +2,7 @@
     <wb-module deploy-name="TEColones">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/UserImages"/>
         <property name="context-root" value="TEColones"/>
         <property name="java-output-path" value="/TEColones/build/classes"/>
     </wb-module>

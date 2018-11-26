@@ -17,7 +17,7 @@ public class TipoUsuario {
 	private int idTipoUsuario;
 	
 	@Column(name = "TipoUsuario")
-	private String TipoUsuario;
+	private String tipoUsuario;
 	
 	public TipoUsuario() {
 		
@@ -29,7 +29,7 @@ public class TipoUsuario {
 	 */
 	public TipoUsuario(int idTipoUsuario, String tipoUsuario) {
 		this.idTipoUsuario = idTipoUsuario;
-		TipoUsuario = tipoUsuario;
+		tipoUsuario = tipoUsuario;
 	}
 
 	/**
@@ -50,14 +50,14 @@ public class TipoUsuario {
 	 * @return the tipoUsuario
 	 */
 	public String getTipoUsuario() {
-		return TipoUsuario;
+		return tipoUsuario;
 	}
 
 	/**
 	 * @param tipoUsuario the tipoUsuario to set
 	 */
 	public void setTipoUsuario(String tipoUsuario) {
-		TipoUsuario = tipoUsuario;
+		tipoUsuario = tipoUsuario;
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +65,7 @@ public class TipoUsuario {
 	 */
 	@Override
 	public String toString() {
-		return "TipoUsuario [idTipoUsuario=" + idTipoUsuario + ", TipoUsuario=" + TipoUsuario + "]";
+		return "TipoUsuario [idTipoUsuario=" + idTipoUsuario + ", TipoUsuario=" + tipoUsuario + "]";
 	}
 	
 

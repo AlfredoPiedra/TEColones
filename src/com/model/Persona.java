@@ -19,12 +19,9 @@ public class Persona {
 	@Column(name = "Nombre")
 	private String Nombre;
 	
-	@Column(name = "PrimerApellido")
-	private String PrimerApellido;
-	
-	@Column(name = "SegundoApellido")
-	private String SegundoApellido;
-	
+	@Column(name = "Apellidos")
+	private String Apellidos;
+
 	@Column(name = "Universidad")
 	private String Universidad;
 	
@@ -34,31 +31,63 @@ public class Persona {
 	@Column(name = "Descripcion")
 	private String Descripcion;
 	
+	
+
+	public Persona() {
+		
+	}
+	
 	/**
 	 * @param idPersona
 	 * @param nombre
-	 * @param primerApellido
-	 * @param segundoApellido
+	 * @param apellidos
 	 * @param universidad
 	 * @param habilidades
 	 * @param descripcion
 	 */
-	public Persona(int idPersona, String nombre, String primerApellido, String segundoApellido, String universidad,
-			String habilidades, String descripcion) {
-		
+	public Persona(int idPersona, String nombre, String apellidos, String universidad, String habilidades,
+			String descripcion) {
 		this.idPersona = idPersona;
 		Nombre = nombre;
-		PrimerApellido = primerApellido;
-		SegundoApellido = segundoApellido;
+		Apellidos = apellidos;
 		Universidad = universidad;
 		Habilidades = habilidades;
 		Descripcion = descripcion;
 	}
 
-	public Persona() {
-		
+
+
+	/**
+	 * @param nombre
+	 * @param apellidos
+	 * @param universidad
+	 * @param habilidades
+	 * @param descripcion
+	 */
+	public Persona(String nombre, String apellidos, String universidad, String habilidades, String descripcion) {
+		Nombre = nombre;
+		Apellidos = apellidos;
+		Universidad = universidad;
+		Habilidades = habilidades;
+		Descripcion = descripcion;
 	}
 
+
+
+	/**
+	 * @return the apellidos
+	 */
+	public String getApellidos() {
+		return Apellidos;
+	}
+
+	/**
+	 * @param apellidos the apellidos to set
+	 */
+	public void setApellidos(String apellidos) {
+		Apellidos = apellidos;
+	}
+	
 	/**
 	 * @return the idPersona
 	 */
@@ -85,34 +114,6 @@ public class Persona {
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
-	}
-
-	/**
-	 * @return the primerApellido
-	 */
-	public String getPrimerApellido() {
-		return PrimerApellido;
-	}
-
-	/**
-	 * @param primerApellido the primerApellido to set
-	 */
-	public void setPrimerApellido(String primerApellido) {
-		PrimerApellido = primerApellido;
-	}
-
-	/**
-	 * @return the segundoApellido
-	 */
-	public String getSegundoApellido() {
-		return SegundoApellido;
-	}
-
-	/**
-	 * @param segundoApellido the segundoApellido to set
-	 */
-	public void setSegundoApellido(String segundoApellido) {
-		SegundoApellido = segundoApellido;
 	}
 
 	/**
@@ -163,8 +164,8 @@ public class Persona {
 	@Override
 	public String toString() {
 		
-		return "Persona [idPersona=" + idPersona + ", Nombre=" + Nombre + ", PrimerApellido=" + PrimerApellido
-				+ ", SegundoApellido=" + SegundoApellido + ", Universidad=" + Universidad + ", Habilidades="
+		return "Persona [idPersona=" + idPersona + ", Nombre=" + Nombre + ", PrimerApellido=" + Apellidos
+				+ ", SegundoApellido=" + ", Universidad=" + Universidad + ", Habilidades="
 				+ Habilidades + ", Descripcion=" + Descripcion + "]";
 	}
 	

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,25 @@ public class Telefono {
 	@Column(name = "Telefono")
 	private String Telefono;
 	
+	
+	@OneToOne
+	@JoinColumn(name="Persona_idPersona")
+	private Persona idPersona;
+	
+	/**
+	 * @return the idPersona
+	 */
+	public Persona getIdPersona() {
+		return idPersona;
+	}
+
+	/**
+	 * @param idPersona the idPersona to set
+	 */
+	public void setIdPersona(Persona idPersona) {
+		this.idPersona = idPersona;
+	}
+
 	public Telefono() {
 		
 	}
@@ -26,10 +47,22 @@ public class Telefono {
 	/**
 	 * @param idTelefono
 	 * @param telefono
+	 * @param idPersona
 	 */
-	public Telefono(int idTelefono, String telefono) {
+	public Telefono(int idTelefono, String telefono, Persona idPersona) {
 		this.idTelefono = idTelefono;
 		Telefono = telefono;
+		this.idPersona = idPersona;
+	}
+
+	/**
+	 * @param idTelefono
+	 * @param telefono
+	 * @param idPersona
+	 */
+	public Telefono(String telefono, Persona idPersona) {
+		Telefono = telefono;
+		this.idPersona = idPersona;
 	}
 
 	/**
@@ -65,7 +98,9 @@ public class Telefono {
 	 */
 	@Override
 	public String toString() {
-		return "Telefono [idTelefono=" + idTelefono + ", Telefono=" + Telefono + "]";
+		return "Telefono [idTelefono=" + idTelefono + ", Telefono=" + Telefono + ", idPersona=" + idPersona + "]";
 	}
+
+	
 
 }

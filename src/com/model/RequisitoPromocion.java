@@ -22,8 +22,8 @@ public class RequisitoPromocion {
 	private double CantidadRequerida;
 	
 	@OneToOne
-	@JoinColumn(name = "idMaterialReciclable")
-	private int idMaterialReciclable;
+	@JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	private MaterialReciclable idMaterialReciclable;
 	
 	public RequisitoPromocion() {
 
@@ -34,7 +34,7 @@ public class RequisitoPromocion {
 	 * @param cantidadRequerida
 	 * @param idMaterialReciclable
 	 */
-	public RequisitoPromocion(int idRequisitoPromocion, double cantidadRequerida, int idMaterialReciclable) {
+	public RequisitoPromocion(int idRequisitoPromocion, double cantidadRequerida, MaterialReciclable idMaterialReciclable) {
 		this.idRequisitoPromocion = idRequisitoPromocion;
 		CantidadRequerida = cantidadRequerida;
 		this.idMaterialReciclable = idMaterialReciclable;
@@ -71,14 +71,14 @@ public class RequisitoPromocion {
 	/**
 	 * @return the idMaterialReciclable
 	 */
-	public int getIdMaterialReciclable() {
+	public MaterialReciclable getIdMaterialReciclable() {
 		return idMaterialReciclable;
 	}
 
 	/**
 	 * @param idMaterialReciclable the idMaterialReciclable to set
 	 */
-	public void setIdMaterialReciclable(int idMaterialReciclable) {
+	public void setIdMaterialReciclable(MaterialReciclable idMaterialReciclable) {
 		this.idMaterialReciclable = idMaterialReciclable;
 	}
 

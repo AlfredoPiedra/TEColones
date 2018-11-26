@@ -21,9 +21,11 @@ public class Conversion {
 	@Column(name = "MontoConversion")
 	private double MontoConversion;
 	
+	
+	
 	@OneToOne
-	@JoinColumn(name = "idMaterialReciclable")
-	private int idMaterialReciclable;
+	@JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	private MaterialReciclable idMaterialReciclable;
 	
 	public Conversion() {
 		
@@ -34,7 +36,7 @@ public class Conversion {
 	 * @param montoConversion
 	 * @param idMaterialReciclable
 	 */
-	public Conversion(int idConversion, double montoConversion, int idMaterialReciclable) {
+	public Conversion(int idConversion, double montoConversion, MaterialReciclable idMaterialReciclable) {
 		this.idConversion = idConversion;
 		MontoConversion = montoConversion;
 		this.idMaterialReciclable = idMaterialReciclable;
@@ -71,14 +73,14 @@ public class Conversion {
 	/**
 	 * @return the idMaterialReciclable
 	 */
-	public int getIdMaterialReciclable() {
+	public MaterialReciclable getIdMaterialReciclable() {
 		return idMaterialReciclable;
 	}
 
 	/**
 	 * @param idMaterialReciclable the idMaterialReciclable to set
 	 */
-	public void setIdMaterialReciclable(int idMaterialReciclable) {
+	public void setIdMaterialReciclable(MaterialReciclable idMaterialReciclable) {
 		this.idMaterialReciclable = idMaterialReciclable;
 	}
 

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<meta charset="ISO-8859-1">
+		<title>Pagina de Perfil</title>
+		<link rel="stylesheet" type="text/css" href="PaginaRegistro.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		
+		<script>
+		
+	    	var conteoMaterial = 0;
+		
+			function addField(){
+	            
+				
+				var container = document.getElementById("contenedor");
+	            
+				 var input = document.createElement("input");
+		         input.type = "number";
+		         input.placeholder = "kg";
+		         input.name = "Cantidad"+ conteoMaterial;
+		         input.id = "ent";
+				
+		         var divider = document.createElement("div");
+		         divider.className = "inline2";
+		         
+		         var myList = document.getElementById("ent2");
+		         var mat = document.getElementById("mat");
+		         var bal = document.getElementById("bal");
+		         var bmas = document.getElementById("bmas");
+		         
+		         var otherList = myList.cloneNode(true);
+		         otherList.name = "TipoMaterial" + conteoMaterial;
+		         divider.appendChild(mat.cloneNode(true));
+		         divider.appendChild(otherList);
+		         divider.appendChild(bal.cloneNode(true));
+		         divider.appendChild(input);
+		         divider.appendChild(bmas);
+		         
+		         container.appendChild(divider);
+		         conteoMaterial = conteoMaterial + 1;
+		         var conter = document.getElementById("contadorMat");
+		         conter.value = conteoMaterial;
+	        }
+	
+		</script>
+		
+		
+	</head>
+	
+	<body>
+	
+		<div class="navbar">
+		  
+		  <div class="inline">
+		  
+		  	<div class="Logo">
+				<img alt="LogotipoXTEC" src="IMAG/LogoDeXTEC.png" style="padding-left:30%" >
+			</div>
+					
+			<div class="dropdown">
+						 
+				<button class="dropbtn"></button>
+				<div class="dropdown-content">
+					<a href="#">Darse de baja</a>
+					<a href="#">Cerrar sesión</a>
+				</div>
+				
+				</div> 
+					
+					<div class="dropdown">
+						<button class="dropbtn2"></button>
+						<div class="dropdown-content">
+							<a href="#">Manual del usuario</a>	
+						</div>
+					
+				</div>
+		
+		  	</div>
+		  
+		  </div>
+		  
+		  
+		  		
+		  	<div class="sidenav">
+			  <a href="#">Perfil</a>
+			  <a href="#">Registro</a>
+			</div>
+			
+			<div class="main">
+			  	
+			  	
+			  	<div class="inline">
+			  		
+			  		
+			  		<form>
+			  		
+			  		
+			  			<div class=info>
+			  			
+			  				<h1>Promociones</h1>
+			  				<h2>10000</h2>
+			  			
+			  			</div>
+			  			
+			  			<div class=info2 id="contenedor">
+			  			
+			  			<h1>Registro Reciclaje</h1>
+			  			<p class="t">Ingresa el carnet del estudiante:</p>
+			  			<div class="inline">
+			  			
+			  				<img alt="Icono" src="IMAG/IconoID.png" style="background-color:transparent;">
+			  				<input type="text" name="Carnet" placeholder="Carnet" id="ent">
+			  				
+			  			</div>
+			  			
+			  			<p class="t">Selecciona la cantidad y el tipo de material de reciclaje:</p>
+			  			<div class="inline2">
+			  				
+			  				<img alt="Icono" src="IMAG/IconoMaterial.png" style="background-color:transparent;" id="mat">
+			  				<select name="TipoMaterial" class="DropList" id="ent2">
+								<option selected>Carton</option>
+								<option>Vidrio</option>
+							</select>	
+							
+							<img alt="Icono" src="IMAG/IconoBalanza.png" style="background-color:transparent;" id="bal">
+			  				<input type="number" name="Cantidad" placeholder="kg" id="ent">
+			  				
+			  				<button type="button" class="addbtn" onclick="addField()" id="bmas"></button>
+			  				
+			  				
+			  			</div>
+			  			
+			  			</div>
+			  			<div id=botones >
+				  			<button type= submit class="Boton" id="envio"">Registrar</button>
+				  		</div>
+			  	
+			  			<input type="text" name="contadorMaterial" id="contadorMat">
+			  		</form>
+			  					  	
+			  	</div>
+			  	
+			  	<div class=footer></div>
+			  	
+			</div>	
+
+	</body>
+	
+</html>

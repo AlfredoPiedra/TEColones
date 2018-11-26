@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Promocion")
@@ -21,10 +25,47 @@ public class Promocion {
 	@Column(name = "MontoPromocion")
 	private double MontoPromocion;
 	
-	@OneToOne
-	@JoinColumn(name = "idTipoPromocion")
-	private int idTipoPromocion;
 	
+	@OneToOne
+	@JoinColumn(name = "TipoPromocion_idTipoPromocion")
+	private TipoPromocion idTipoPromocion;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name = "FechaInicio")
+	private Date FechaInicio;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name = "FechaFinalizacion")
+	private Date FechaFinalizacion;
+	
+	/**
+	 * @return the fechaInicio
+	 */
+	public Date getFechaInicio() {
+		return FechaInicio;
+	}
+
+	/**
+	 * @param fechaInicio the fechaInicio to set
+	 */
+	public void setFechaInicio(Date fechaInicio) {
+		FechaInicio = fechaInicio;
+	}
+
+	/**
+	 * @return the fechaFinalizacion
+	 */
+	public Date getFechaFinalizacion() {
+		return FechaFinalizacion;
+	}
+
+	/**
+	 * @param fechaFinalizacion the fechaFinalizacion to set
+	 */
+	public void setFechaFinalizacion(Date fechaFinalizacion) {
+		FechaFinalizacion = fechaFinalizacion;
+	}
+
 	public Promocion() {
 		
 	}
@@ -33,11 +74,16 @@ public class Promocion {
 	 * @param idPromocion
 	 * @param montoPromocion
 	 * @param idTipoPromocion
+	 * @param fechaInicio
+	 * @param fechaFinalizacion
 	 */
-	public Promocion(int idPromocion, double montoPromocion, int idTipoPromocion) {
+	public Promocion(int idPromocion, double montoPromocion, TipoPromocion idTipoPromocion, Date fechaInicio,
+			Date fechaFinalizacion) {
 		this.idPromocion = idPromocion;
 		MontoPromocion = montoPromocion;
 		this.idTipoPromocion = idTipoPromocion;
+		FechaInicio = fechaInicio;
+		FechaFinalizacion = fechaFinalizacion;
 	}
 
 	/**
@@ -71,14 +117,14 @@ public class Promocion {
 	/**
 	 * @return the idTipoPromocion
 	 */
-	public int getIdTipoPromocion() {
+	public TipoPromocion getIdTipoPromocion() {
 		return idTipoPromocion;
 	}
 
 	/**
 	 * @param idTipoPromocion the idTipoPromocion to set
 	 */
-	public void setIdTipoPromocion(int idTipoPromocion) {
+	public void setIdTipoPromocion(TipoPromocion idTipoPromocion) {
 		this.idTipoPromocion = idTipoPromocion;
 	}
 

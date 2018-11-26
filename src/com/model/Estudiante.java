@@ -1,7 +1,5 @@
 package com.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Estudiante")
@@ -25,51 +21,62 @@ public class Estudiante {
 	@Column(name = "Carnet")
 	private String Carnet;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FechaRegistro")
-	private Date FechaRegistro;
-	
 	@Column(name = "TEColonesDisponibles")
 	private double TEColonesDisponibles;
 	
 	@Column(name = "Carrera")
 	private String Carrera;
 	
-	@OneToOne
-	@JoinColumn(name = "idPersona")
-	private int idPersona;
 	
 	@OneToOne
-	@JoinColumn(name = "idPersona")
-	private int idTipoUsuario;
+	@JoinColumn(name = "Persona_idPersona")
+	private Persona idPersona;
+	
 	
 	@OneToOne
-	@JoinColumn(name = "idPersona")
-	private int idCuenta;
+	@JoinColumn(name = "Cuenta_idCuenta")
+	private Cuenta idCuenta;
 	
 	public Estudiante() {
 		
 	}
 
+	
+	
 	/**
 	 * @param idEstudiante
 	 * @param carnet
-	 * @param fechaRegistro
 	 * @param tEColonesDisponibles
 	 * @param carrera
 	 * @param idPersona
-	 * @param idTipoUsuario
 	 * @param idCuenta
 	 */
-	public Estudiante(int idEstudiante, String carnet, Date fechaRegistro, double tEColonesDisponibles, String carrera,
-			int idPersona, int idTipoUsuario, int idCuenta) {
+	public Estudiante(int idEstudiante, String carnet, double tEColonesDisponibles, String carrera, Persona idPersona,
+			Cuenta idCuenta) {
 		this.idEstudiante = idEstudiante;
 		Carnet = carnet;
-		FechaRegistro = fechaRegistro;
 		TEColonesDisponibles = tEColonesDisponibles;
 		Carrera = carrera;
 		this.idPersona = idPersona;
-		this.idTipoUsuario = idTipoUsuario;
+		this.idCuenta = idCuenta;
+	}
+
+
+
+	/**
+	 * @param idEstudiante
+	 * @param carnet
+	 * @param tEColonesDisponibles
+	 * @param carrera
+	 * @param idPersona
+	 * @param idCuenta
+	 */
+	public Estudiante(String carnet, double tEColonesDisponibles, String carrera, Persona idPersona,
+								Cuenta idCuenta) {
+		Carnet = carnet;
+		TEColonesDisponibles = tEColonesDisponibles;
+		Carrera = carrera;
+		this.idPersona = idPersona;
 		this.idCuenta = idCuenta;
 	}
 
@@ -99,20 +106,6 @@ public class Estudiante {
 	 */
 	public void setCarnet(String carnet) {
 		Carnet = carnet;
-	}
-
-	/**
-	 * @return the fechaRegistro
-	 */
-	public Date getFechaRegistro() {
-		return FechaRegistro;
-	}
-
-	/**
-	 * @param fechaRegistro the fechaRegistro to set
-	 */
-	public void setFechaRegistro(Date fechaRegistro) {
-		FechaRegistro = fechaRegistro;
 	}
 
 	/**
@@ -146,42 +139,28 @@ public class Estudiante {
 	/**
 	 * @return the idPersona
 	 */
-	public int getIdPersona() {
+	public Persona getIdPersona() {
 		return idPersona;
 	}
 
 	/**
 	 * @param idPersona the idPersona to set
 	 */
-	public void setIdPersona(int idPersona) {
+	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;
 	}
-
-	/**
-	 * @return the idTipoUsuario
-	 */
-	public int getIdTipoUsuario() {
-		return idTipoUsuario;
-	}
-
-	/**
-	 * @param idTipoUsuario the idTipoUsuario to set
-	 */
-	public void setIdTipoUsuario(int idTipoUsuario) {
-		this.idTipoUsuario = idTipoUsuario;
-	}
-
+	
 	/**
 	 * @return the idCuenta
 	 */
-	public int getIdCuenta() {
+	public Cuenta getIdCuenta() {
 		return idCuenta;
 	}
 
 	/**
 	 * @param idCuenta the idCuenta to set
 	 */
-	public void setIdCuenta(int idCuenta) {
+	public void setIdCuenta(Cuenta idCuenta) {
 		this.idCuenta = idCuenta;
 	}
 
@@ -190,9 +169,9 @@ public class Estudiante {
 	 */
 	@Override
 	public String toString() {
-		return "Estudiante [idEstudiante=" + idEstudiante + ", Carnet=" + Carnet + ", FechaRegistro=" + FechaRegistro
+		return "Estudiante [idEstudiante=" + idEstudiante + ", Carnet=" + Carnet + ", FechaRegistro="
 				+ ", TEColonesDisponibles=" + TEColonesDisponibles + ", Carrera=" + Carrera + ", idPersona=" + idPersona
-				+ ", idTipoUsuario=" + idTipoUsuario + ", idCuenta=" + idCuenta + "]";
+				+ ", idTipoUsuario=" + ", idCuenta=" + idCuenta + "]";
 	}
 
 }
