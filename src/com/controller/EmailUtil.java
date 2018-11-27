@@ -8,6 +8,12 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailUtil {
 
+	/**
+	 * método utilizado para enviar un correo
+	 * @param destinatario
+	 * @param asunto
+	 * @param cuerpo
+	 */
 	public static void enviarEmail(String destinatario, String asunto, String cuerpo) {
 	   
 	    String remitente = "TEColones";

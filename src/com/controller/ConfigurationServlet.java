@@ -19,6 +19,13 @@ public class ConfigurationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
+	/**
+	 * Recibe el llamado para desplegar la información en la página de administrador
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		

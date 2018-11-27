@@ -20,6 +20,7 @@ public class UserValidationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	/**
+	 * servlet utilizado para la validacion de usuarios
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

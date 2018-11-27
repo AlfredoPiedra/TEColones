@@ -20,6 +20,7 @@ public class PrivilegeServlet extends HttpServlet {
        
    
 	/**
+	 * Servlet utilizado para otorgar privilegios de administrador
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

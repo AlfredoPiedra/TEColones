@@ -77,6 +77,11 @@ public class HibernateSingleton {
 			
 		}
 
+	
+		/**
+		 * patrón singleton para obtener la única instancia de sessionFactory
+		 * @return sessionFactory
+		 */
 		public static SessionFactory getSessionFactory() {
 	       
 			if(sessionFactory == null){

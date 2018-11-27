@@ -26,6 +26,9 @@ public class HibernateUtil {
     
 	private SessionFactory sessionFactory;
 	
+	/**
+	 * Crea u obtiene la instancia de hibernate
+	 */
 	public HibernateUtil(){
 		
 		sessionFactory = 
@@ -34,6 +37,11 @@ public class HibernateUtil {
 	}
 	
 	
+	/**
+	 * setea los permisos para el administrador
+	 * @param id
+	 * @return booleano
+	 */
 	public boolean darPermisos(String id){
 		
 		Session ss = 
@@ -70,6 +78,10 @@ public class HibernateUtil {
 	}
 	
 	
+	/**
+	 * devuelve la lista de materiales reciclables
+	 * @return lista de materiales
+	 */
 	public ArrayList<Contenedor> encontrarMateriales(){
 		
 		Session ss = 
@@ -108,6 +120,10 @@ public class HibernateUtil {
 	}
 	
 	
+	/**
+	 * Devuelve la lista de promociones
+	 * @return lista de promociones
+	 */
 	public ArrayList<Contenedor> encontrarPromociones(){
 		
 		Session ss = 
@@ -146,6 +162,11 @@ public class HibernateUtil {
 	}
 	
 	
+	
+	/**
+	 * Devuelve la lista de funcionarios
+	 * @return lista de funcionarios
+	 */
 	public ArrayList<Contenedor> encontrarFuncionarios(){
 		
 		Session ss = 
@@ -203,6 +224,14 @@ public class HibernateUtil {
 	}
 	
 	
+	/**
+	 * Método para agregar correos y telefonos a una persona
+	 * @param persona
+	 * @param Correo
+	 * @param Telefono
+	 * @param Correos
+	 * @param Telefonos
+	 */
 	private void agregarMedios(Persona persona,
 												 String Correo,
 												 String Telefono,
@@ -245,6 +274,16 @@ public class HibernateUtil {
 		
 	}
 	
+	
+	
+	/**
+	 * Método para verificar el tipo de usuario
+	 * @param TipoUsuario
+	 * @param Carnet
+	 * @param Carrera
+	 * @param persona
+	 * @param cuenta
+	 */
 	private void validarTipoUsuario(String TipoUsuario,
 													 String Carnet,
 													 String Carrera,
@@ -279,6 +318,24 @@ public class HibernateUtil {
 		
 	}
 	
+	
+	
+	/**
+	 * Método para registrar un usuario
+	 * @param TipoUsuario
+	 * @param Nombre
+	 * @param Apellidos
+	 * @param Universidad
+	 * @param Contrasena
+	 * @param Correo
+	 * @param Telefono
+	 * @param Carnet
+	 * @param Carrera
+	 * @param Habilidades
+	 * @param Descripcion
+	 * @param Correos
+	 * @param Telefonos
+	 */
 	public void registrarUsuario(String TipoUsuario,
 												 String Nombre, 
 												 String Apellidos, 
@@ -365,6 +422,13 @@ public class HibernateUtil {
 	
 	}
 	
+	
+	/**
+	 * Devuelve el usuario buscado
+	 * @param carnet
+	 * @param contrasena
+	 * @return usuario
+	 */
 	public Usuario encontrarUsuario(String carnet,String contrasena){
 		
 		
@@ -495,6 +559,12 @@ public class HibernateUtil {
 		
 	}
 	
+	
+	
+	/**
+	 * Método para activar cuenta
+	 * @param id
+	 */
 	public void activarCuenta(int id){
 		
 		Session ss = 

@@ -17,7 +17,7 @@ public class ActivationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 * Espera el llamado para ejecutar la acción de activar cuenta
 	 * @param request
 	 * @param response
 	 * @throws ServletException
