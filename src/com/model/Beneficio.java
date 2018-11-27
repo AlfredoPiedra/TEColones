@@ -9,27 +9,37 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Beneficio")
+/**
+ * @Entity
+ * @Table(name = "Beneficio") 
+ */
+
 public class Beneficio {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idBeneficio")
+	/**
+	 *@Id
+	 *@GeneratedValue(strategy = GenerationType.IDENTITY)
+	 *@Column(name = "idBeneficio")
+	 */
 	private int idBeneficio;
-	
-	@Column(name = "Beneficio")
 	private String Beneficio;
 	
-	@OneToOne
-	@JoinColumn(name="TipoCambio_idTipoCambio")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name="TipoCambio_idTipoCambio")
+	 */
+
 	private TipoCambio idTipoCambio;
 	
+	/**
+	 * Constructor vacío de Beneficio
+	 */
 	public Beneficio() {
 		
 	}
 
 	/**
+	 * Constructor de Beneficio
 	 * @param idBeneficio
 	 * @param beneficio
 	 * @param idTipoCambio
@@ -42,6 +52,7 @@ public class Beneficio {
 
 
 	/**
+	 * Constructor de Beneficio
 	 * @param beneficio
 	 * @param idTipoCambio
 	 */
@@ -53,28 +64,34 @@ public class Beneficio {
 
 
 	/**
-	 * @return the idBeneficio
+	 * getter the idBeneficio
+	 * @return idBeneficio
 	 */
 	public int getIdBeneficio() {
 		return idBeneficio;
 	}
 
+	
 	/**
-	 * @param idBeneficio the idBeneficio to set
+	 * setea el valor de idBeneficio
+	 * @param idBeneficio
 	 */
 	public void setIdBeneficio(int idBeneficio) {
 		this.idBeneficio = idBeneficio;
 	}
 
 	/**
-	 * @return the beneficio
+	 * getter de beneficio
+	 * @return beneficio
 	 */
 	public String getBeneficio() {
 		return Beneficio;
 	}
 
+	
 	/**
-	 * @param beneficio the beneficio to set
+	 * setter de beneficio
+	 * @param beneficio
 	 */
 	public void setBeneficio(String beneficio) {
 		Beneficio = beneficio;
