@@ -7,21 +7,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "RequisitoxPromocion")
+/**
+ * @Entity
+ * @Table(name = "RequisitoxPromocion")
+ */
 public class RequisitoxPromocion {
 
-	@Id
-	@Column(name="idRequisitoxPromocion")
+	/**
+	 * @Id
+	 * @Column(name="idRequisitoxPromocion")
+	 */
 	private int idRequisitoxPromocion;
 	
-	@OneToOne
-	@JoinColumn(name = "RequisitoPromocion_idRequisitoPromocion")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "RequisitoPromocion_idRequisitoPromocion")
+	 */
 	private RequisitoPromocion idRequisitoPromocion;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Promocion_idPromocion")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "Promocion_idPromocion")
+	 */
 	private Promocion idPromocion;
 	
 	public RequisitoxPromocion() {
@@ -29,6 +37,7 @@ public class RequisitoxPromocion {
 	}
 	
 	/**
+	 * Constructor de RequisitoxPromocion
 	 * @param idRequisitoxPromocion
 	 * @param idRequisitoPromocion
 	 * @param idPromocion
@@ -43,6 +52,7 @@ public class RequisitoxPromocion {
 
 
 	/**
+	 * Constructor de RequisitoxPromocion
 	 * @param idRequisitoPromocion
 	 * @param idPromocion
 	 */
@@ -52,42 +62,48 @@ public class RequisitoxPromocion {
 	}
 
 	/**
-	 * @return the idRequisitoPromocion
+	 * getter de idRequisitoPromocion
+	 * @return idRequisitoPromocion
 	 */
 	public RequisitoPromocion getIdRequisitoPromocion() {
 		return idRequisitoPromocion;
 	}
 
 	/**
-	 * @param idRequisitoPromocion the idRequisitoPromocion to set
+	 * setter de idRequisitoPromocion
+	 * @param idRequisitoPromocion
 	 */
 	public void setIdRequisitoPromocion(RequisitoPromocion idRequisitoPromocion) {
 		this.idRequisitoPromocion = idRequisitoPromocion;
 	}
 
 	/**
-	 * @return the idPromocion
+	 * getter de idPromocion
+	 * @return idPromocion
 	 */
 	public Promocion getIdPromocion() {
 		return idPromocion;
 	}
 
 	/**
-	 * @param idPromocion the idPromocion to set
+	 * setter de idPromocion
+	 * @param idPromocion
 	 */
 	public void setIdPromocion(Promocion idPromocion) {
 		this.idPromocion = idPromocion;
 	}
 
 	/**
-	 * @return the idRequisitoxPromocion
+	 * getter de idRequisitoxPromocion
+	 * @return idRequisitoxPromocion
 	 */
 	public int getIdRequisitoxPromocion() {
 		return idRequisitoxPromocion;
 	}
 
 	/**
-	 * @param idRequisitoxPromocion the idRequisitoxPromocion to set
+	 * setter de idRequisitoxPromocion
+	 * @param idRequisitoxPromocion
 	 */
 	public void setIdRequisitoxPromocion(int idRequisitoxPromocion) {
 		this.idRequisitoxPromocion = idRequisitoxPromocion;

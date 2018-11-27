@@ -13,62 +13,81 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
-@Table(name = "Cuenta")
+/**
+ * @Entity
+ * @Table(name = "Cuenta")
+ */
 public class Cuenta {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idCuenta")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idCuenta")
+	 */
 	private int idCuenta;
 	
-	@Column(name = "Contrasena")
+	/**
+	 * @Column(name = "Contrasena")
+	 */
 	private String Contrasena;
 	
-	@Column(name = "FotoPerfil")
+	/**
+	 * @Column(name = "FotoPerfil")
+	 */
 	private String FotoPerfil;
 	
-	@Column(name = "Validez")
+	/**
+	 * @Column(name = "Validez")
+	 */
 	private boolean Validez;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "TipoUsuario_idTipoUsuario")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "TipoUsuario_idTipoUsuario")
+	 */
 	private TipoUsuario idTipoUsuario;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FechaRegistro")
+	/**
+	 * @Temporal(TemporalType.DATE)
+	 * @Column(name = "FechaRegistro")
+	 */
 	private Date FechaRegistro;
 	
 	/**
-	 * @return the validez
+	 * getter de validez
+	 * @return validez
 	 */
 	public boolean isValidez() {
 		return Validez;
 	}
 
 	/**
-	 * @param validez the validez to set
+	 * setter de validez
+	 * @param validez
 	 */
 	public void setValidez(boolean validez) {
 		Validez = validez;
 	}
 	
 	/**
-	 * @return the idTipoUsuario
+	 * getter de idTipoUsuario
+	 * @return idTipoUsuario
 	 */
 	public TipoUsuario getIdTipoUsuario() {
 		return idTipoUsuario;
 	}
 
 	/**
-	 * @param idTipoUsuario the idTipoUsuario to set
+	 * setter de idTipoUsuario
+	 * @param idTipoUsuario
 	 */
 	public void setIdTipoUsuario(TipoUsuario idTipoUsuario) {
 		this.idTipoUsuario = idTipoUsuario;
 	}
 	
 	/**
+	 * Constructor de Cuenta
 	 * @param idCuenta
 	 * @param usuario
 	 * @param contrasena
@@ -88,6 +107,7 @@ public class Cuenta {
 	}
 
 	/**
+	 * Constructor de Cuenta
 	 * @param idCuenta
 	 * @param usuario
 	 * @param contrasena
@@ -106,64 +126,64 @@ public class Cuenta {
 	}
 
 	/**
-	 * @return the fechaRegistro
+	 * getter de fechaRegistro
+	 * @return fechaRegistro
 	 */
 	public Date getFechaRegistro() {
 		return FechaRegistro;
 	}
 
 	/**
-	 * @param fechaRegistro the fechaRegistro to set
+	 * setter de fechaRegistro
+	 * @param fechaRegistro
 	 */
 	public void setFechaRegistro(Date fechaRegistro) {
 		FechaRegistro = fechaRegistro;
 	}
 
 	/**
-	 * @return the idTipoUsuario
-	 */
-
-	public Cuenta() {
-		
-	}
-
-	/**
-	 * @return the idCuenta
+	 * getter de idCuenta
+	 * @return idCuenta
 	 */
 	public int getIdCuenta() {
 		return idCuenta;
 	}
 
 	/**
-	 * @param idCuenta the idCuenta to set
+	 * setter de idCuenta
+	 * @param idCuenta
 	 */
 	public void setIdCuenta(int idCuenta) {
 		this.idCuenta = idCuenta;
 	}
 
 	/**
-	 * @return the contrasena
+	 * getter de contrasena
+	 * @return contrasena
 	 */
 	public String getContrasena() {
 		return Contrasena;
 	}
 
 	/**
-	 * @param contrasena the contrasena to set
+	 * setter de contrasena
+	 * @param contrasena
 	 */
 	public void setContrasena(String contrasena) {
 		Contrasena = contrasena;
 	}
 
 	/**
-	 * @return the fotoPerfil
+	 * getter de fotoPerfil
+	 * @return fotoPerfil
 	 */
 	public String getFotoPerfil() {
 		return FotoPerfil;
 	}
 
 	/**
-	 * @param fotoPerfil the fotoPerfil to set
+	 * setter de fotoPerfil
+	 * @param fotoPerfil
 	 */
 	public void setFotoPerfil(String fotoPerfil) {
 		FotoPerfil = fotoPerfil;

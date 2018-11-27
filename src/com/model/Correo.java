@@ -9,20 +9,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Correo")
+/**
+ * @Entity
+ * @Table(name = "Correo")
+ */
+
 public class Correo {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idCorreo")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idCorreo")
+	 */
 	private int idCorreo;
 	
-	@Column(name = "Correo")
+	/**
+	 * @Column(name = "Correo")
+	 */
 	private String Correo;
 	
-	@OneToOne
-	@JoinColumn(name="Persona_idPersona")
+	/**
+	 * @OneToOne
+	 *@JoinColumn(name="Persona_idPersona")
+	 */
 	private Persona idPersona;
 	
 	public Correo() {
@@ -30,6 +39,7 @@ public class Correo {
 	}
 
 	/**
+	 * Constructor de Correo
 	 * @param idCorreo
 	 * @param correo
 	 * @param idPersona
@@ -43,20 +53,23 @@ public class Correo {
 
 
 	/**
-	 * @return the idPersona
+	 * getter de idPersona
+	 * @return idPersona
 	 */
 	public Persona getIdPersona() {
 		return idPersona;
 	}
 
 	/**
-	 * @param idPersona the idPersona to set
+	 * setter de idPersona
+	 * @param idPersona
 	 */
 	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;
 	}
 
 	/**
+	 * Constructor de Correo
 	 * @param idCorreo
 	 * @param correo
 	 * @param idPersona
@@ -68,28 +81,32 @@ public class Correo {
 	}
 
 	/**
-	 * @return the idCorreo
+	 * getter de idCorreo
+	 * @return idCorreo
 	 */
 	public int getIdCorreo() {
 		return idCorreo;
 	}
 
 	/**
-	 * @param idCorreo the idCorreo to set
+	 * setter de idCorreo
+	 * @param idCorreo
 	 */
 	public void setIdCorreo(int idCorreo) {
 		this.idCorreo = idCorreo;
 	}
 
 	/**
-	 * @return the correo
+	 * getter de correo
+	 * @return correo
 	 */
 	public String getCorreo() {
 		return Correo;
 	}
 
 	/**
-	 * @param correo the correo to set
+	 * setter de correo
+	 * @param correo
 	 */
 	public void setCorreo(String correo) {
 		Correo = correo;

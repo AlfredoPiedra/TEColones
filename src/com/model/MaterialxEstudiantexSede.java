@@ -13,35 +13,49 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
-@Table(name = "MaterialxEstudiantexSede")
+/**
+ * Entity
+ *@Table(name = "MaterialxEstudiantexSede")
+ */
 public class MaterialxEstudiantexSede {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idMaterialxEstudiantexSede")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idMaterialxEstudiantexSede")
+	 */
 	private int idMaterialxEstudiantexSede;
 	
-	@Column(name = "Cantidad")
+	/**
+	 * @Column(name = "Cantidad")
+	 */
 	private double Cantidad;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FechaRegistro")
+	/**
+	 * @Temporal(TemporalType.DATE)
+	 * @Column(name = "FechaRegistro")
+	 */
 	private Date FechaRegistro;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Estudiante_idEstudiante")
+	/**
+	 * @OneToOne
+	 *@JoinColumn(name = "Estudiante_idEstudiante")
+	 */ 
 	private Estudiante idEstudiante;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	 */
 	private MaterialReciclable idMaterialReciclable;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Sede_idSede")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "Sede_idSede")
+	 */
 	private Sede idSede;
 	
 	public MaterialxEstudiantexSede() {
@@ -49,6 +63,7 @@ public class MaterialxEstudiantexSede {
 	}
 
 	/**
+	 * Constructor de idMaterialxEstudiantexSede
 	 * @param idMaterialxEstudiantexSede
 	 * @param cantidad
 	 * @param fechaRegistro
@@ -67,6 +82,7 @@ public class MaterialxEstudiantexSede {
 	}
 
 	/**
+	 * getter de idMaterialxEstudiantexSede
 	 * @return the idMaterialxEstudiantexSede
 	 */
 	public int getIdMaterialxEstudiantexSede() {
@@ -74,6 +90,7 @@ public class MaterialxEstudiantexSede {
 	}
 
 	/**
+	 * setter de idMaterialxEstudiantexSede
 	 * @param idMaterialxEstudiantexSede the idMaterialxEstudiantexSede to set
 	 */
 	public void setIdMaterialxEstudiantexSede(int idMaterialxEstudiantexSede) {
@@ -81,55 +98,63 @@ public class MaterialxEstudiantexSede {
 	}
 
 	/**
-	 * @return the cantidad
+	 * getter de cantidad
+	 * @return cantidad
 	 */
 	public double getCantidad() {
 		return Cantidad;
 	}
 
 	/**
-	 * @param cantidad the cantidad to set
+	 * setter de cantidad
+	 * @param cantidad
 	 */
 	public void setCantidad(double cantidad) {
 		Cantidad = cantidad;
 	}
 
 	/**
-	 * @return the fechaRegistro
+	 * getter de fechaRegistro
+	 * @return fechaRegistro
 	 */
 	public Date getFechaRegistro() {
 		return FechaRegistro;
 	}
 
 	/**
-	 * @param fechaRegistro the fechaRegistro to set
+	 * setter de fechaRegistro
+	 * @param fechaRegistro 
 	 */
 	public void setFechaRegistro(Date fechaRegistro) {
 		FechaRegistro = fechaRegistro;
 	}
 
 	/**
-	 * @return the idEstudiante
+	 * getter de idEstudiante
+	 * @return idEstudiante
 	 */
 	public Estudiante getIdEstudiante() {
 		return idEstudiante;
 	}
 
 	/**
-	 * @param idEstudiante the idEstudiante to set
+	 * setter de idEstudiante
+	 * @param idEstudiante
 	 */
 	public void setIdEstudiante(Estudiante idEstudiante) {
 		this.idEstudiante = idEstudiante;
 	}
 
 	/**
-	 * @return the idMaterialReciclable
+	 * getter de idMaterialReciclable
+	 * @return idMaterialReciclable
 	 */
 	public MaterialReciclable getIdMaterialReciclable() {
 		return idMaterialReciclable;
 	}
 
 	/**
+	 * setter de idMaterialReciclable
 	 * @param idMaterialReciclable the idMaterialReciclable to set
 	 */
 	public void setIdMaterialReciclable(MaterialReciclable idMaterialReciclable) {
@@ -137,14 +162,16 @@ public class MaterialxEstudiantexSede {
 	}
 
 	/**
-	 * @return the idSede
+	 * getter de idSede
+	 * @return idSede
 	 */
 	public Sede getIdSede() {
 		return idSede;
 	}
 
 	/**
-	 * @param idSede the idSede to set
+	 * setter de idSede
+	 * @param idSede
 	 */
 	public void setIdSede(Sede idSede) {
 		this.idSede = idSede;

@@ -7,16 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "TipoPromocion")
+/**
+ * @Entity
+ * @Table(name = "TipoPromocion")
+ */
 public class TipoPromocion {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idTipoPromocion")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idTipoPromocion")
+	 */
 	private int idTipoPromocion;
 	
-	@Column(name = "Tipo")
+	/**
+	 * @Column(name = "Tipo")
+	 */
 	private String Tipo;
 	
 	public TipoPromocion() {
@@ -24,6 +30,7 @@ public class TipoPromocion {
 	}
 
 	/**
+	 * Constructor de TipoPromocion
 	 * @param idTipoPromocion
 	 * @param tipo
 	 */
@@ -33,28 +40,32 @@ public class TipoPromocion {
 	}
 
 	/**
-	 * @return the idTipoPromocion
+	 * getter de idTipoPromocion
+	 * @return idTipoPromocion
 	 */
 	public int getIdTipoPromocion() {
 		return idTipoPromocion;
 	}
 
 	/**
-	 * @param idTipoPromocion the idTipoPromocion to set
+	 * setter de idTipoPromocion
+	 * @param idTipoPromocion
 	 */
 	public void setIdTipoPromocion(int idTipoPromocion) {
 		this.idTipoPromocion = idTipoPromocion;
 	}
 
 	/**
-	 * @return the tipo
+	 * getter de tipo
+	 * @return tipo
 	 */
 	public String getTipo() {
 		return Tipo;
 	}
 
 	/**
-	 * @param tipo the tipo to set
+	 * setter de tipo
+	 * @param tipo
 	 */
 	public void setTipo(String tipo) {
 		Tipo = tipo;

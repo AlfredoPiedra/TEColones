@@ -5,16 +5,22 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "TelefonoxPersona")
+/**
+ * @Entity
+ * @Table(name = "TelefonoxPersona")
+ */
 public class TelefonoxPersona {
 
-	@OneToOne
-	@JoinColumn(name = "idTelefono")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "idTelefono")
+	 */
 	private int idTelefono;
 	
-	@OneToOne
-	@JoinColumn(name = "idPersona")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "idPersona")
+	 */
 	private int idPersona;
 	
 	public TelefonoxPersona() {
@@ -22,6 +28,7 @@ public class TelefonoxPersona {
 	}
 
 	/**
+	 * Constructor de TelefonoxPersona
 	 * @param idTelefono
 	 * @param idPersona
 	 */
@@ -31,6 +38,7 @@ public class TelefonoxPersona {
 	}
 
 	/**
+	 * getter de idTelefono
 	 * @return the idTelefono
 	 */
 	public int getIdTelefono() {
@@ -38,21 +46,24 @@ public class TelefonoxPersona {
 	}
 
 	/**
-	 * @param idTelefono the idTelefono to set
+	 * setter de idTelefono
+	 * @param idTelefono
 	 */
 	public void setIdTelefono(int idTelefono) {
 		this.idTelefono = idTelefono;
 	}
 
 	/**
-	 * @return the idPersona
+	 * getter de idPersona
+	 * @return idPersona
 	 */
 	public int getIdPersona() {
 		return idPersona;
 	}
 
 	/**
-	 * @param idPersona the idPersona to set
+	 * setter de idPersona
+	 * @param idPersona
 	 */
 	public void setIdPersona(int idPersona) {
 		this.idPersona = idPersona;

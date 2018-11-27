@@ -9,20 +9,28 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "RequisitoPromocion")
+/**
+ * @Entity
+ * @Table(name = "RequisitoPromocion")
+ */
 public class RequisitoPromocion {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idRequisitoPromocion")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idRequisitoPromocion")
+	 */
 	private int idRequisitoPromocion;
 	
-	@Column(name = "CantidadRequerida")
+	/**
+	 * @Column(name = "CantidadRequerida")
+	 */
 	private double CantidadRequerida;
 	
-	@OneToOne
-	@JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "MaterialReciclable_idMaterialReciclable")
+	 */
 	private MaterialReciclable idMaterialReciclable;
 	
 	public RequisitoPromocion() {
@@ -30,6 +38,7 @@ public class RequisitoPromocion {
 	}
 
 	/**
+	 * Constructor de RequisitoPromocion
 	 * @param idRequisitoPromocion
 	 * @param cantidadRequerida
 	 * @param idMaterialReciclable
@@ -41,6 +50,7 @@ public class RequisitoPromocion {
 	}
 
 	/**
+	 * getter d eidRequisitoPromocion
 	 * @return the idRequisitoPromocion
 	 */
 	public int getIdRequisitoPromocion() {
@@ -48,6 +58,7 @@ public class RequisitoPromocion {
 	}
 
 	/**
+	 * setter de idRequisitoPromocion
 	 * @param idRequisitoPromocion the idRequisitoPromocion to set
 	 */
 	public void setIdRequisitoPromocion(int idRequisitoPromocion) {
@@ -55,28 +66,32 @@ public class RequisitoPromocion {
 	}
 
 	/**
-	 * @return the cantidadRequerida
+	 * getter de cantidadRequerida
+	 * @return cantidadRequerida
 	 */
 	public double getCantidadRequerida() {
 		return CantidadRequerida;
 	}
 
 	/**
-	 * @param cantidadRequerida the cantidadRequerida to set
+	 * setter de cantidadRequerida
+	 * @param cantidadRequerida
 	 */
 	public void setCantidadRequerida(double cantidadRequerida) {
 		CantidadRequerida = cantidadRequerida;
 	}
 
 	/**
-	 * @return the idMaterialReciclable
+	 * getter de idMaterialReciclable
+	 * @return idMaterialReciclable
 	 */
 	public MaterialReciclable getIdMaterialReciclable() {
 		return idMaterialReciclable;
 	}
 
 	/**
-	 * @param idMaterialReciclable the idMaterialReciclable to set
+	 * setter de idMaterialReciclable
+	 * @param idMaterialReciclable
 	 */
 	public void setIdMaterialReciclable(MaterialReciclable idMaterialReciclable) {
 		this.idMaterialReciclable = idMaterialReciclable;

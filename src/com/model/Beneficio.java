@@ -22,6 +22,10 @@ public class Beneficio {
 	 *@Column(name = "idBeneficio")
 	 */
 	private int idBeneficio;
+	
+	/**
+	 *@Column(name = "Beneficio") 
+	 */
 	private String Beneficio;
 	
 	/**

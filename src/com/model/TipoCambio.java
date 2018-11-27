@@ -9,22 +9,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="TipoCambio")
+/**
+ * @Entity
+ * @Table(name="TipoCambio")
+ */
 public class TipoCambio {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idTipoCambio")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idTipoCambio")
+	 */
 	private int idTipoCambio;
 	
-	@Column(name="TipoCambio")
+	/**
+	 * @Column(name="TipoCambio")
+	 */
 	private double TipoCambio;
 	
-	@Column(name="FechaRegistro")
+	/**
+	 * @Column(name="FechaRegistro")
+	 */
 	private Date FechaRegistro;
 
 	/**
+	 * Constructor de TipoCambio
 	 * @param tipoCambio
 	 * @param fechaRegistro
 	 */
@@ -34,6 +43,7 @@ public class TipoCambio {
 	}
 
 	/**
+	 * Constructor de TipoCambio
 	 * @param idTipoCambio
 	 * @param tipoCambio
 	 * @param fechaRegistro
@@ -45,42 +55,48 @@ public class TipoCambio {
 	}
 
 	/**
-	 * @return the idTipoCambio
+	 * getter de idTipoCambio
+	 * @return idTipoCambio
 	 */
 	public int getIdTipoCambio() {
 		return idTipoCambio;
 	}
 
 	/**
-	 * @param idTipoCambio the idTipoCambio to set
+	 * setter de idTipoCambio
+	 * @param idTipoCambio
 	 */
 	public void setIdTipoCambio(int idTipoCambio) {
 		this.idTipoCambio = idTipoCambio;
 	}
 
 	/**
-	 * @return the tipoCambio
+	 * getter de tipoCambio
+	 * @return tipoCambio
 	 */
 	public double getTipoCambio() {
 		return TipoCambio;
 	}
 
 	/**
-	 * @param tipoCambio the tipoCambio to set
+	 * setter de tipoCambio 
+	 * @param tipoCambio
 	 */
 	public void setTipoCambio(double tipoCambio) {
 		TipoCambio = tipoCambio;
 	}
 
 	/**
-	 * @return the fechaRegistro
+	 * getter de fechaRegistro
+	 * @return fechaRegistro
 	 */
 	public Date getFechaRegistro() {
 		return FechaRegistro;
 	}
 
 	/**
-	 * @param fechaRegistro the fechaRegistro to set
+	 * setter de fechaRegistro
+	 * @param fechaRegistro
 	 */
 	public void setFechaRegistro(Date fechaRegistro) {
 		FechaRegistro = fechaRegistro;

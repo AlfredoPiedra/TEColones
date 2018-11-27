@@ -18,6 +18,10 @@ public class ActivationServlet extends HttpServlet {
        
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

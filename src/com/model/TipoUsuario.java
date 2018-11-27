@@ -7,16 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "TipoUsuario")
+/**
+ * @Entity
+ * @Table(name = "TipoUsuario")
+ */
 public class TipoUsuario {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idTipoUsuario")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idTipoUsuario")
+	 */
 	private int idTipoUsuario;
 	
-	@Column(name = "TipoUsuario")
+	/**
+	 * @Column(name = "TipoUsuario")
+	 */
 	private String tipoUsuario;
 	
 	public TipoUsuario() {
@@ -24,6 +30,7 @@ public class TipoUsuario {
 	}
 
 	/**
+	 * Constructor de TipoUsuario
 	 * @param idTipoUsuario
 	 * @param tipoUsuario
 	 */
@@ -33,6 +40,7 @@ public class TipoUsuario {
 	}
 
 	/**
+	 * getter de idTipoUsuario
 	 * @return the idTipoUsuario
 	 */
 	public int getIdTipoUsuario() {
@@ -40,21 +48,24 @@ public class TipoUsuario {
 	}
 
 	/**
-	 * @param idTipoUsuario the idTipoUsuario to set
+	 * setter de idTipoUsuario
+	 * @param idTipoUsuario
 	 */
 	public void setIdTipoUsuario(int idTipoUsuario) {
 		this.idTipoUsuario = idTipoUsuario;
 	}
 
 	/**
-	 * @return the tipoUsuario
+	 * getter de tipoUsuario
+	 * @return tipoUsuario
 	 */
 	public String getTipoUsuario() {
 		return tipoUsuario;
 	}
 
 	/**
-	 * @param tipoUsuario the tipoUsuario to set
+	 * setter de tipoUsuario
+	 * @param tipoUsuario
 	 */
 	public void setTipoUsuario(String tipoUsuario) {
 		tipoUsuario = tipoUsuario;

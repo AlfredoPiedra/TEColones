@@ -9,32 +9,42 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Telefono")
+/**
+ * @Entity
+ * @Table(name = "Telefono")
+ */
 public class Telefono {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idTelefono")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idTelefono")
+	 */
 	private int idTelefono;
 	
-	@Column(name = "Telefono")
+	/**
+	 * @Column(name = "Telefono")
+	 */
 	private String Telefono;
 	
 	
-	@OneToOne
-	@JoinColumn(name="Persona_idPersona")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name="Persona_idPersona")
+	 */
 	private Persona idPersona;
 	
 	/**
-	 * @return the idPersona
+	 * getter de idPersoa
+	 * @return idPersona
 	 */
 	public Persona getIdPersona() {
 		return idPersona;
 	}
 
 	/**
-	 * @param idPersona the idPersona to set
+	 * setter de idPersona
+	 * @param idPersona
 	 */
 	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;
@@ -45,6 +55,7 @@ public class Telefono {
 	}
 	
 	/**
+	 * Constructor de Telefono
 	 * @param idTelefono
 	 * @param telefono
 	 * @param idPersona
@@ -56,6 +67,7 @@ public class Telefono {
 	}
 
 	/**
+	 * Constructor de Telefono
 	 * @param idTelefono
 	 * @param telefono
 	 * @param idPersona
@@ -66,28 +78,32 @@ public class Telefono {
 	}
 
 	/**
-	 * @return the idTelefono
+	 * getter de idTelefono
+	 * @return idTelefono
 	 */
 	public int getIdTelefono() {
 		return idTelefono;
 	}
 
 	/**
-	 * @param idTelefono the idTelefono to set
+	 * setter de idTelefono
+	 * @param idTelefono
 	 */
 	public void setIdTelefono(int idTelefono) {
 		this.idTelefono = idTelefono;
 	}
 
 	/**
-	 * @return the telefono
+	 * getter de telefono
+	 * @return telefono
 	 */
 	public String getTelefono() {
 		return Telefono;
 	}
 
 	/**
-	 * @param telefono the telefono to set
+	 * setter de telefono
+	 * @param telefono
 	 */
 	public void setTelefono(String telefono) {
 		Telefono = telefono;

@@ -9,32 +9,46 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Estudiante")
+/**
+ * @Entity
+ * @Table(name = "Estudiante")
+ */
 public class Estudiante {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idEstudiante")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idEstudiante")
+	 */
 	private int idEstudiante;
 	
-	@Column(name = "Carnet")
+	/**
+	 * @Column(name = "Carnet")
+	 */
 	private String Carnet;
 	
-	@Column(name = "TEColonesDisponibles")
+	/**
+	 * @Column(name = "TEColonesDisponibles")
+	 */
 	private double TEColonesDisponibles;
 	
-	@Column(name = "Carrera")
+	/**
+	 * @Column(name = "Carrera")
+	 */ 
 	private String Carrera;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Persona_idPersona")
+	/**
+	 * @OneToOne
+	 *@JoinColumn(name = "Persona_idPersona")
+	 */
 	private Persona idPersona;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Cuenta_idCuenta")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "Cuenta_idCuenta")
+	 */
 	private Cuenta idCuenta;
 	
 	public Estudiante() {
@@ -44,6 +58,7 @@ public class Estudiante {
 	
 	
 	/**
+	 * Constructor de Estudiante
 	 * @param idEstudiante
 	 * @param carnet
 	 * @param tEColonesDisponibles
@@ -64,6 +79,7 @@ public class Estudiante {
 
 
 	/**
+	 * Constructor de Estudiante
 	 * @param idEstudiante
 	 * @param carnet
 	 * @param tEColonesDisponibles
@@ -81,84 +97,96 @@ public class Estudiante {
 	}
 
 	/**
-	 * @return the idEstudiante
+	 * getter de idEstudiante
+	 * @return idEstudiante
 	 */
 	public int getIdEstudiante() {
 		return idEstudiante;
 	}
 
 	/**
-	 * @param idEstudiante the idEstudiante to set
+	 * setter de idEstudiante
+	 * @param idEstudiante
 	 */
 	public void setIdEstudiante(int idEstudiante) {
 		this.idEstudiante = idEstudiante;
 	}
 
 	/**
-	 * @return the carnet
+	 * getter de carnet
+	 * @return carnet
 	 */
 	public String getCarnet() {
 		return Carnet;
 	}
 
 	/**
-	 * @param carnet the carnet to set
+	 * setter de carnet
+	 * @param carnet
 	 */
 	public void setCarnet(String carnet) {
 		Carnet = carnet;
 	}
 
 	/**
-	 * @return the tEColonesDisponibles
+	 * getter de TEColonesDisponibles
+	 * @return tEColonesDisponibles
 	 */
 	public double getTEColonesDisponibles() {
 		return TEColonesDisponibles;
 	}
 
 	/**
-	 * @param tEColonesDisponibles the tEColonesDisponibles to set
+	 * setter de TEColonesDisponibles
+	 * @param tEColonesDisponibles
 	 */
 	public void setTEColonesDisponibles(double tEColonesDisponibles) {
 		TEColonesDisponibles = tEColonesDisponibles;
 	}
 
 	/**
-	 * @return the carrera
+	 * getter de carrera
+	 * @return carrera
 	 */
 	public String getCarrera() {
 		return Carrera;
 	}
 
 	/**
-	 * @param carrera the carrera to set
+	 * setter de carrera
+	 * @param carrera
 	 */
 	public void setCarrera(String carrera) {
 		Carrera = carrera;
 	}
 
 	/**
-	 * @return the idPersona
+	 * getter de idPersona
+	 * @return idPersona
 	 */
 	public Persona getIdPersona() {
 		return idPersona;
 	}
 
 	/**
-	 * @param idPersona the idPersona to set
+	 * setter de idPersona
+	 * @param idPersona
 	 */
 	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;
 	}
 	
 	/**
-	 * @return the idCuenta
+	 * getter de idCuenta
+	 * @return  idCuenta
 	 */
 	public Cuenta getIdCuenta() {
 		return idCuenta;
 	}
 
 	/**
-	 * @param idCuenta the idCuenta to set
+	 * setter de idCuenta
+	 * @param idCuenta
 	 */
 	public void setIdCuenta(Cuenta idCuenta) {
 		this.idCuenta = idCuenta;

@@ -7,16 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "MaterialReciclable")
+/**
+ * @Entity
+ * @Table(name = "MaterialReciclable")
+ */
 public class MaterialReciclable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idMaterialReciclable")
+	/**
+	 * @Id
+	 *@GeneratedValue(strategy = GenerationType.IDENTITY)
+	 *@Column(name = "idMaterialReciclable")
+	 */
 	private int idMaterialReciclable;
 	
-	@Column(name = "Material")
+	/**
+	 * @Column(name = "Material")
+	 */
 	private String Material;
 	
 	public MaterialReciclable() {
@@ -24,6 +30,7 @@ public class MaterialReciclable {
 	}
 
 	/**
+	 * Constructor de MaterialReciclable
 	 * @param idMaterialReciclable
 	 * @param material
 	 */
@@ -33,28 +40,32 @@ public class MaterialReciclable {
 	}
 
 	/**
-	 * @return the idMaterialReciclable
+	 * getter de idMaterialReciclable
+	 * @return idMaterialReciclable
 	 */
 	public int getIdMaterialReciclable() {
 		return idMaterialReciclable;
 	}
 
 	/**
-	 * @param idMaterialReciclable the idMaterialReciclable to set
+	 * setter de idMaterialReciclable
+	 * @param idMaterialReciclable 
 	 */
 	public void setIdMaterialReciclable(int idMaterialReciclable) {
 		this.idMaterialReciclable = idMaterialReciclable;
 	}
 
 	/**
-	 * @return the material
+	 * getter de material
+	 * @return material
 	 */
 	public String getMaterial() {
 		return Material;
 	}
 
 	/**
-	 * @param material the material to set
+	 * setter de material
+	 * @param material
 	 */
 	public void setMaterial(String material) {
 		Material = material;

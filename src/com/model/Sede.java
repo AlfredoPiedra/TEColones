@@ -7,16 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Sede")
+/**
+ * @Entity
+ * @Table(name = "Sede")
+ */
 public class Sede {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idSede")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idSede")
+	 */
 	private int idSede;
 	
-	@Column(name = "Nombre")
+	/**
+	 * @Column(name = "Nombre")
+	 */
 	private String Nombre;
 	
 	public Sede() {
@@ -24,6 +30,7 @@ public class Sede {
 	}
 
 	/**
+	 * Constructor de Sede
 	 * @param idSede
 	 * @param nombre
 	 */
@@ -33,28 +40,32 @@ public class Sede {
 	}
 
 	/**
-	 * @return the idSede
+	 * getter de idSede
+	 * @return idSede
 	 */
 	public int getIdSede() {
 		return idSede;
 	}
 
 	/**
-	 * @param idSede the idSede to set
+	 * setter de idSede
+	 * @param idSede
 	 */
 	public void setIdSede(int idSede) {
 		this.idSede = idSede;
 	}
 
 	/**
-	 * @return the nombre
+	 * getter de nombre
+	 * @return nombre
 	 */
 	public String getNombre() {
 		return Nombre;
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 * setter de nombre
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;

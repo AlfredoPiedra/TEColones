@@ -7,28 +7,42 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Persona")
+/**
+ * @Entity
+ * @Table(name = "Persona")
+ */
 public class Persona {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idPersona")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+ 	 * @Column(name = "idPersona")
+	 */
 	private int idPersona;
 	
-	@Column(name = "Nombre")
+	/**
+	 * @Column(name = "Nombre")
+	 */
 	private String Nombre;
 	
-	@Column(name = "Apellidos")
+	/**
+	 * @Column(name = "Apellidos")
+	 */
 	private String Apellidos;
 
-	@Column(name = "Universidad")
+	/**
+	 * @Column(name = "Universidad")
+	 */
 	private String Universidad;
 	
-	@Column(name = "Habilidades")
+	/**
+	 * @Column(name = "Habilidades")
+	 */
 	private String Habilidades;
 	
-	@Column(name = "Descripcion")
+	/**
+	 * @Column(name = "Descripcion")
+	 */
 	private String Descripcion;
 	
 	
@@ -38,6 +52,7 @@ public class Persona {
 	}
 	
 	/**
+	 * Constructor de Persona
 	 * @param idPersona
 	 * @param nombre
 	 * @param apellidos
@@ -58,6 +73,7 @@ public class Persona {
 
 
 	/**
+	 * Constructor de Persona
 	 * @param nombre
 	 * @param apellidos
 	 * @param universidad
@@ -75,84 +91,96 @@ public class Persona {
 
 
 	/**
-	 * @return the apellidos
+	 * getter de apellidos
+	 * @return apellidos
 	 */
 	public String getApellidos() {
 		return Apellidos;
 	}
 
 	/**
-	 * @param apellidos the apellidos to set
+	 * setter de apellidos
+	 * @param apellidos
 	 */
 	public void setApellidos(String apellidos) {
 		Apellidos = apellidos;
 	}
 	
 	/**
-	 * @return the idPersona
+	 * getter de idPersona
+	 * @return idPersona
 	 */
 	public int getIdPersona() {
 		return idPersona;
 	}
 
 	/**
-	 * @param idPersona the idPersona to set
+	 * setter de idPersona
+	 * @param idPersona
 	 */
 	public void setIdPersona(int idPersona) {
 		this.idPersona = idPersona;
 	}
 
 	/**
-	 * @return the nombre
+	 * getter de nombre
+	 * @return nombre
 	 */
 	public String getNombre() {
 		return Nombre;
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 * setter de nombre
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
 
 	/**
-	 * @return the universidad
+	 * getter de universidad
+	 * @return universidad
 	 */
 	public String getUniversidad() {
 		return Universidad;
 	}
 
 	/**
-	 * @param universidad the universidad to set
+	 * setter de universidad
+	 * @param universidad
 	 */
 	public void setUniversidad(String universidad) {
 		Universidad = universidad;
 	}
 
 	/**
-	 * @return the habilidades
+	 * getter de habilidades
+	 * @return habilidades
 	 */
 	public String getHabilidades() {
 		return Habilidades;
 	}
 
 	/**
-	 * @param habilidades the habilidades to set
+	 * setter de habilidades
+	 * @param habilidades
 	 */
 	public void setHabilidades(String habilidades) {
 		Habilidades = habilidades;
 	}
 
 	/**
-	 * @return the descripcion
+	 * getter de descripcion
+	 * @return descripcion
 	 */
 	public String getDescripcion() {
 		return Descripcion;
 	}
 
 	/**
-	 * @param descripcion the descripcion to set
+	 * setter de descripcion
+	 * @param descripcion
 	 */
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;

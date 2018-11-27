@@ -13,34 +13,50 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
-@Table(name = "Promocion")
+/**
+ * @Entity
+ *@Table(name = "Promocion")
+ */
 public class Promocion {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idPromocion")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idPromocion")
+	 */
 	private int idPromocion;
 	
-	@Column(name="Nombre")
+	/**
+	 * @Column(name="Nombre")
+	 */
 	private String Nombre;
 	
-	@Column(name = "MontoPromocion")
+	/**
+	 * @Column(name = "MontoPromocion")
+	 */
 	private double MontoPromocion;
 	
-	@Column(name = "Validez")
+	/**
+	 * @Column(name = "Validez")
+	 */
 	private boolean Validez;
 	
-	@OneToOne
-	@JoinColumn(name = "TipoPromocion_idTipoPromocion")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "TipoPromocion_idTipoPromocion")
+	 */
 	private TipoPromocion idTipoPromocion;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FechaInicio")
+	/**
+	 * @Temporal(TemporalType.DATE)
+	 * @Column(name = "FechaInicio")
+	 */
 	private Date FechaInicio;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FechaFinalizacion")
+	/**
+	 * @Temporal(TemporalType.DATE)
+	 *@Column(name = "FechaFinalizacion")
+	 */
 	private Date FechaFinalizacion;
 
 	
@@ -50,6 +66,7 @@ public class Promocion {
 	}
 	
 	/**
+	 * Constructor de Promocion
 	 * @param idPromocion
 	 * @param nombre
 	 * @param montoPromocion
@@ -70,6 +87,7 @@ public class Promocion {
 	}
 
 	/**
+	 * Constructor de Promocion
 	 * @param nombre
 	 * @param montoPromocion
 	 * @param validez
@@ -88,98 +106,112 @@ public class Promocion {
 	}
 
 	/**
-	 * @return the idPromocion
+	 * getter de idPromocion
+	 * @return idPromocion
 	 */
 	public int getIdPromocion() {
 		return idPromocion;
 	}
 
 	/**
-	 * @return the nombre
+	 * getter de nombre
+	 * @return nombre
 	 */
 	public String getNombre() {
 		return Nombre;
 	}
 
 	/**
-	 * @return the montoPromocion
+	 * getter de montoPromocion
+	 * @return montoPromocion
 	 */
 	public double getMontoPromocion() {
 		return MontoPromocion;
 	}
 
 	/**
-	 * @return the validez
+	 * getter de validez
+	 * @return validez
 	 */
 	public boolean isValidez() {
 		return Validez;
 	}
 
 	/**
-	 * @return the idTipoPromocion
+	 * getter de idTipoPromocion
+	 * @return idTipoPromocion
 	 */
 	public TipoPromocion getIdTipoPromocion() {
 		return idTipoPromocion;
 	}
 
 	/**
-	 * @return the fechaInicio
+	 * getter de fechaInicio
+	 * @return fechaInicio
 	 */
 	public Date getFechaInicio() {
 		return FechaInicio;
 	}
 
 	/**
-	 * @return the fechaFinalizacion
+	 * getter de fechaFinalizacion
+	 * @return fechaFinalizacion
 	 */
 	public Date getFechaFinalizacion() {
 		return FechaFinalizacion;
 	}
 
 	/**
-	 * @param idPromocion the idPromocion to set
+	 * setter de idPromocion
+	 * @param idPromocion
 	 */
 	public void setIdPromocion(int idPromocion) {
 		this.idPromocion = idPromocion;
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 * setter de nombre
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
 
 	/**
-	 * @param montoPromocion the montoPromocion to set
+	 * setter de montoPromocion
+	 * @param montoPromocion
 	 */
 	public void setMontoPromocion(double montoPromocion) {
 		MontoPromocion = montoPromocion;
 	}
 
 	/**
-	 * @param validez the validez to set
+	 * setter de validez
+	 * @param validez
 	 */
 	public void setValidez(boolean validez) {
 		Validez = validez;
 	}
 
 	/**
-	 * @param idTipoPromocion the idTipoPromocion to set
+	 * setter de idTipoPromocion
+	 * @param idTipoPromocion
 	 */
 	public void setIdTipoPromocion(TipoPromocion idTipoPromocion) {
 		this.idTipoPromocion = idTipoPromocion;
 	}
 
 	/**
-	 * @param fechaInicio the fechaInicio to set
+	 * setter de fechaInicio
+	 * @param fechaInicio
 	 */
 	public void setFechaInicio(Date fechaInicio) {
 		FechaInicio = fechaInicio;
 	}
 
 	/**
-	 * @param fechaFinalizacion the fechaFinalizacion to set
+	 * setter de fechaFinalizacion
+	 * @param fechaFinalizacion
 	 */
 	public void setFechaFinalizacion(Date fechaFinalizacion) {
 		FechaFinalizacion = fechaFinalizacion;

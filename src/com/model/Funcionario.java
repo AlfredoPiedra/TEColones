@@ -9,29 +9,41 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Funcionario")
+/**
+ * @Entity
+ * @Table(name = "Funcionario")
+ */
 public class Funcionario {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idFuncionario")
+	/**
+	 * @Id
+	 * @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 * @Column(name = "idFuncionario")
+	 */
 	private int idFuncionario;
 	
-	@Column(name = "Identificacion")
+	/**
+	 * @Column(name = "Identificacion")
+	 */
 	private String Identificacion;
 	
-	@Column(name = "esAdmin")
+	/**
+	 * @Column(name = "esAdmin")
+	 */
 	private boolean esAdmin;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Cuenta_idCuenta")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "Cuenta_idCuenta")
+	 */
 	private Cuenta idCuenta;
 	
 	
-	@OneToOne
-	@JoinColumn(name = "Persona_idPersona")
+	/**
+	 * @OneToOne
+	 * @JoinColumn(name = "Persona_idPersona")
+	 */
 	private Persona idPersona;
 	
 	public Funcionario() {
@@ -39,6 +51,7 @@ public class Funcionario {
 	}
 
 	/**
+	 * Constructor de Funcionario
 	 * @param idFuncionario
 	 * @param identificacion
 	 * @param esAdmin
@@ -54,6 +67,7 @@ public class Funcionario {
 	}
 
 	/**
+	 * Constructor de Funcionario
 	 * @param idFuncionario
 	 * @param identificacion
 	 * @param esAdmin
@@ -68,6 +82,7 @@ public class Funcionario {
 	}
 
 	/**
+	 * getter de idFuncionario
 	 * @return the idFuncionario
 	 */
 	public int getIdFuncionario() {
@@ -75,6 +90,7 @@ public class Funcionario {
 	}
 
 	/**
+	 * setter de idFuncionario
 	 * @param idFuncionario the idFuncionario to set
 	 */
 	public void setIdFuncionario(int idFuncionario) {
@@ -82,56 +98,64 @@ public class Funcionario {
 	}
 
 	/**
-	 * @return the identificacion
+	 * getter de identificacion
+	 * @return identificacion
 	 */
 	public String getIdentificacion() {
 		return Identificacion;
 	}
 
 	/**
-	 * @param identificacion the identificacion to set
+	 * setter de identificacion
+	 * @param identificacion
 	 */
 	public void setIdentificacion(String identificacion) {
 		Identificacion = identificacion;
 	}
 
 	/**
-	 * @return the esAdmin
+	 * getter de esAdmin
+	 * @return esAdmin
 	 */
 	public boolean isEsAdmin() {
 		return esAdmin;
 	}
 
 	/**
-	 * @param esAdmin the esAdmin to set
+	 * setter de esAdmin
+	 * @param esAdmin 
 	 */
 	public void setEsAdmin(boolean esAdmin) {
 		this.esAdmin = esAdmin;
 	}
 
 	/**
-	 * @return the idCuenta
+	 * getter de idCuenta
+	 * @return idCuenta
 	 */
 	public Cuenta getIdCuenta() {
 		return idCuenta;
 	}
 
 	/**
-	 * @param idCuenta the idCuenta to set
+	 * setter de idCuenta
+	 * @param idCuenta 
 	 */
 	public void setIdCuenta(Cuenta idCuenta) {
 		this.idCuenta = idCuenta;
 	}
 
 	/**
-	 * @return the idPersona
+	 * getter de idPersona
+	 * @return idPersona
 	 */
 	public Persona getIdPersona() {
 		return idPersona;
 	}
 
 	/**
-	 * @param idPersona the idPersona to set
+	 * setter de idPersona
+	 * @param idPersona 
 	 */
 	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;

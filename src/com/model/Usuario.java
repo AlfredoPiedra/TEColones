@@ -23,6 +23,7 @@ public class Usuario {
 	}
 
 	/**
+	 * Constructor de Usuario
 	 * @param nombre
 	 * @param apellidos
 	 * @param carrera
@@ -52,154 +53,176 @@ public class Usuario {
 	}
 
 	/**
-	 * @return the nombre
+	 * getter de nombre
+	 * @return nombre
 	 */
 	public String getNombre() {
 		return Nombre;
 	}
 
 	/**
-	 * @return the apellidos
+	 * getter de apellidos
+	 * @return apellidos
 	 */
 	public String getApellidos() {
 		return Apellidos;
 	}
 
 	/**
-	 * @return the carrera
+	 * getter de carrera
+	 * @return carrera
 	 */
 	public String getCarrera() {
 		return Carrera;
 	}
 
 	/**
-	 * @return the correos
+	 * getter de correos
+	 * @return correos
 	 */
 	public ArrayList<Correo> getCorreos() {
 		return Correos;
 	}
 
 	/**
-	 * @return the telefonos
+	 * getter de telefonos
+	 * @return telefonos
 	 */
 	public ArrayList<Telefono> getTelefonos() {
 		return Telefonos;
 	}
 
 	/**
-	 * @return the fechaRegistro
+	 * getter de fechaRegistro
+	 * @return fechaRegistro
 	 */
 	public Date getFechaRegistro() {
 		return fechaRegistro;
 	}
 
 	/**
-	 * @return the id
+	 * getter de id
+	 * @return id
 	 */
 	public String getId() {
 		return Id;
 	}
 
 	/**
-	 * @return the tipoUsuario
+	 * getter de tipoUsuario
+	 * @return tipoUsuario
 	 */
 	public int getTipoUsuario() {
 		return TipoUsuario;
 	}
 
 	/**
-	 * @return the habilidades
+	 * getter de habilidades
+	 * @return habilidades
 	 */
 	public String getHabilidades() {
 		return Habilidades;
 	}
 
 	/**
-	 * @return the descripcion
+	 * getter de descripcion
+	 * @return descripcion
 	 */
 	public String getDescripcion() {
 		return Descripcion;
 	}
 
 	/**
-	 * @return the universidad
+	 * getter de universidad
+	 * @return universidad
 	 */
 	public String getUniversidad() {
 		return Universidad;
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 * setter de nombre
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
 
 	/**
-	 * @param apellidos the apellidos to set
+	 * setter de apellidos
+	 * @param apellidos
 	 */
 	public void setApellidos(String apellidos) {
 		Apellidos = apellidos;
 	}
 
 	/**
-	 * @param carrera the carrera to set
+	 * setter de carrera
+	 * @param carrera
 	 */
 	public void setCarrera(String carrera) {
 		Carrera = carrera;
 	}
 
 	/**
-	 * @param correos the correos to set
+	 * setter de correos
+	 * @param correos
 	 */
 	public void setCorreos(ArrayList<Correo> correos) {
 		Correos = correos;
 	}
 
 	/**
-	 * @param telefonos the telefonos to set
+	 * setter de telefonos
+	 * @param telefonos
 	 */
 	public void setTelefonos(ArrayList<Telefono> telefonos) {
 		Telefonos = telefonos;
 	}
 
 	/**
-	 * @param fechaRegistro the fechaRegistro to set
+	 * setter de fechaRegistro
+	 * @param fechaRegistro
 	 */
 	public void setFechaRegistro(Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
 
 	/**
-	 * @param id the id to set
+	 * setter de id
+	 * @param id
 	 */
 	public void setId(String id) {
 		Id = id;
 	}
 
 	/**
-	 * @param tipoUsuario the tipoUsuario to set
+	 * setter de tipoUsuario
+	 * @param tipoUsuario
 	 */
 	public void setTipoUsuario(int tipoUsuario) {
 		TipoUsuario = tipoUsuario;
 	}
 
 	/**
-	 * @param habilidades the habilidades to set
+	 * setter de habilidades
+	 * @param habilidades
 	 */
 	public void setHabilidades(String habilidades) {
 		Habilidades = habilidades;
 	}
 
 	/**
-	 * @param descripcion the descripcion to set
+	 * setter de descripcion
+	 * @param descripcion
 	 */
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
 
 	/**
-	 * @param universidad the universidad to set
+	 * setter de universidad
+	 * @param universidad
 	 */
 	public void setUniversidad(String universidad) {
 		Universidad = universidad;
